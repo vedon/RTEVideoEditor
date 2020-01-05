@@ -124,7 +124,7 @@ class MetalVideoRenderer {
     
     private func updateDrawState() {
         if let pixelBuffer = self.curPixelBuffer {
-            transform.inputTextureSize = CGSize(width: CVPixelBufferGetWidth(pixelBuffer),
+            transform.videoTextureSize = CGSize(width: CVPixelBufferGetWidth(pixelBuffer),
                                                 height: CVPixelBufferGetHeight(pixelBuffer))
         }
         let uniform = uniformBuffer.contents().bindMemory(to: RTEUniforms.self, capacity: 1)

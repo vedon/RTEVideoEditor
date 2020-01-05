@@ -27,12 +27,16 @@ class ViewController: UIViewController {
         
         if let path = Bundle.main.path(forResource: "cat", ofType: "MP4") {
             let asset = AVAsset.init(url: URL.init(fileURLWithPath: path))
+
+            player.asset = asset
+            player.start()
+        }
+        
+        if let asset = player.asset {
             slider.minimumValue = 0.0
             slider.maximumValue = Float(asset.duration.value)
-            self.player.asset = asset
-            
-            self.player.start()
         }
+        
         setupViews()
         // Do any additional setup after loading the view.
     }
@@ -41,7 +45,7 @@ class ViewController: UIViewController {
         view.addSubview(player.layer)
         view.addSubview(slider)
         
-        let ratio: CGFloat = 4.0 / 3.0
+        let ratio: CGFloat = 20.0 / 9.0
         player.layer.snp.makeConstraints { (make) in
             make.width.equalToSuperview()
             make.height.equalTo(view.snp.width).multipliedBy(1.0 / ratio)

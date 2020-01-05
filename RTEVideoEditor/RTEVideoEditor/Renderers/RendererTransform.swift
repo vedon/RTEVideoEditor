@@ -18,7 +18,7 @@ class RendererTransform {
     private var scaleMatrix: matrix_float4x4
     
     let quadVertices: [RTEVertex]
-    var rotateAngle: Float
+    var rotateDegree: Float
     
     var drawableSize: CGSize {
         didSet {
@@ -38,10 +38,10 @@ class RendererTransform {
         }
     }
     
-    var inputTextureSize: CGSize {
+    var videoTextureSize: CGSize {
         didSet {
-            if !oldValue.equalTo(inputTextureSize) {
-                Logger.shared.transfrom("inputTextureSize: \(inputTextureSize)")
+            if !oldValue.equalTo(videoTextureSize) {
+                Logger.shared.transfrom("videoTextureSize: \(videoTextureSize)")
             }
         }
     }
@@ -50,8 +50,8 @@ class RendererTransform {
         self.projectionMatrix = matrix4x4_identity()
         self.scaleMatrix = matrix4x4_scale(1.0, 1.0, 1.0)
         self.drawableSize = .zero
-        self.inputTextureSize = .zero
-        self.rotateAngle = 0.0
+        self.videoTextureSize = .zero
+        self.rotateDegree = 40.0
         
         let x: Float = 1.0
         let y: Float = 1.0
@@ -65,7 +65,7 @@ class RendererTransform {
     }
     
     private func updateScaleMatrix() {
-        guard inputTextureSize.isValid() else {
+        guard videoTextureSize.isValid() else {
             Logger.shared.warn("Invalid render target size")
             return
         }
@@ -77,25 +77,25 @@ class RendererTransform {
 
         var scaleX: Float = 1.0
         var scaleY: Float = 1.0
+        var scale: Float = 1.0
         
-        if inputTextureSize.ratio() > 1.0 {
-            scaleY *= Float(1.0 / inputTextureSize.ratio())
-        } else if inputTextureSize.ratio() < 1.0 {
-            scaleX *= Float(inputTextureSize.ratio())
+        if videoTextureSize.ratio() > drawableSize.ratio() {
+            scaleY = 1.0 / Float(videoTextureSize.ratio())
+            scale = Float(drawableSize.ratio())
         } else {
-            
+            scaleX = Float(videoTextureSize.ratio())
         }
         
-        scaleMatrix = matrix4x4_scale(scaleX, scaleY, 1.0)
+        scaleMatrix = matrix4x4_scale(scaleX * scale, scaleY * scale, 1.0)
     }
     
     var mvp: matrix_float4x4 {
         updateScaleMatrix()
-        
-        let rotation: matrix_float4x4 = matrix4x4_rotation(radians_from_degrees(rotateAngle), 0.0, 0.0, 1.0);
+//        TRS
+        let rotation: matrix_float4x4 = matrix4x4_rotation(radians_from_degrees(rotateDegree), 0.0, 0.0, 1.0);
         let translation: matrix_float4x4 = matrix4x4_translation(0.0, 0.0, 0.0)
-        let rt = matrix_multiply(translation, rotation)
-        let rts: matrix_float4x4 = matrix_multiply(scaleMatrix, rt) // The model matrix
+        let st = matrix_multiply(translation, scaleMatrix)
+        let str: matrix_float4x4 = matrix_multiply(rotation, st) // The model matrix
         
         let distance = Float(1.0 / tan(radians_from_degrees(30)))
     
@@ -103,7 +103,7 @@ class RendererTransform {
         let viewMatrix = matrix_look_at_left_hand(0.0, 0.0, -distance, // camera position
                                                   0.0, 0.0, 0.0,  // world center
                                                   0.0, 1.0, 0.0)  // camera orientation
-        let modelMatrix = rts
+        let modelMatrix = str
         let mvp = matrix_multiply(projectionMatrix, matrix_multiply(viewMatrix, modelMatrix));
         return mvp
     }

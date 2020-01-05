@@ -11,6 +11,7 @@ import UIKit
 typealias Drawable = Any
 
 protocol VideoPlayerLayer: UIView {
+    var drawableSizeDidChange: ((_ size: CGSize) -> Void)? { get set}
     func nextDrawable() -> Drawable?
 }
 

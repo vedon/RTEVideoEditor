@@ -18,11 +18,13 @@ struct ExtractorContext {
     let time: CMTime
 }
 
+typealias ExtractCompletion = (_ result: Result<ExtractorContext, ExtractStatus>) -> Void
+
 protocol VideoFrameExtractor {
     var asset: AVAsset? { get set }
     var isPaused: Bool { get set }
     func seekToTime(_ time: CMTime)
-    func pixelBuffer(at timeInterval: Double, completion: (_ result: Result<ExtractorContext, ExtractStatus>) -> Void)
+    func pixelBuffer(at timeInterval: Double, completion: ExtractCompletion)
 }
 
 class AVVideoFrameExtractor: NSObject {
@@ -85,7 +87,7 @@ extension AVVideoFrameExtractor: VideoFrameExtractor {
     }
     
     func seekToTime(_ time: CMTime) {
-        Logger.shared.image("Seek to time: \(CMTimeGetSeconds(time))")
+        Logger.shared.image("Seek to time \(CMTimeGetSeconds(time))")
         
         self.player?.pause()
         NSObject.cancelPreviousPerformRequests(withTarget: self)
@@ -104,5 +106,4 @@ extension AVVideoFrameExtractor: VideoFrameExtractor {
 }
 
 extension AVVideoFrameExtractor: AVPlayerItemOutputPullDelegate {
-  
 }
