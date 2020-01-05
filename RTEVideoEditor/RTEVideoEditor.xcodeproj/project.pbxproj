@@ -479,13 +479,14 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = PDFVFF3QRW;
 				INFOPLIST_FILE = RTEVideoEditor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Free.RTEVideoEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Yipeng_Hao_Wildcard_85HEZ7Y9TR;
+				PROVISIONING_PROFILE_SPECIFIER = YipengHao_Wildcard;
 				SWIFT_OBJC_BRIDGING_HEADER = "RTEVideoEditor-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -501,13 +502,14 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = PDFVFF3QRW;
 				INFOPLIST_FILE = RTEVideoEditor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Free.RTEVideoEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Yipeng_Hao_Wildcard_85HEZ7Y9TR;
+				PROVISIONING_PROFILE_SPECIFIER = YipengHao_Wildcard;
 				SWIFT_OBJC_BRIDGING_HEADER = "RTEVideoEditor-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

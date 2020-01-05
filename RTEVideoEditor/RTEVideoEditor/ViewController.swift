@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         view.addSubview(player.layer)
         view.addSubview(slider)
         
-        let ratio: CGFloat = 20.0 / 9.0
+        let ratio: CGFloat = 4.0 / 4.0
         player.layer.snp.makeConstraints { (make) in
             make.width.equalToSuperview()
             make.height.equalTo(view.snp.width).multipliedBy(1.0 / ratio)

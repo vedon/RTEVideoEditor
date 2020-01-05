@@ -51,7 +51,7 @@ class RendererTransform {
         self.scaleMatrix = matrix4x4_scale(1.0, 1.0, 1.0)
         self.drawableSize = .zero
         self.videoTextureSize = .zero
-        self.rotateDegree = 40.0
+        self.rotateDegree = 00.0
         
         let x: Float = 1.0
         let y: Float = 1.0
@@ -91,20 +91,32 @@ class RendererTransform {
     
     var mvp: matrix_float4x4 {
         updateScaleMatrix()
-//        TRS
-        let rotation: matrix_float4x4 = matrix4x4_rotation(radians_from_degrees(rotateDegree), 0.0, 0.0, 1.0);
-        let translation: matrix_float4x4 = matrix4x4_translation(0.0, 0.0, 0.0)
-        let st = matrix_multiply(translation, scaleMatrix)
-        let str: matrix_float4x4 = matrix_multiply(rotation, st) // The model matrix
+
+        let modelMatrix = { () -> matrix_float4x4 in
+            let rotation: matrix_float4x4 = matrix4x4_rotation(radians_from_degrees(self.rotateDegree), 0.0, 0.0, 1.0);
+            let translation: matrix_float4x4 = matrix4x4_translation(0.0, 0.0, 0.0)
+            let st = matrix_multiply(translation, self.scaleMatrix)
+            let str: matrix_float4x4 = matrix_multiply(rotation, st)
+            
+            return str
+        }
         
+//        let modelMatrix = { () -> matrix_float4x4 in
+//            let rotation: matrix_float4x4 = matrix4x4_rotation(radians_from_degrees(self.rotateDegree), 0.0, 0.0, 1.0);
+//            let translation: matrix_float4x4 = matrix4x4_translation(0.0, 0.0, 0.0)
+//            let tr = matrix_multiply(rotation, translation)
+//            let trs: matrix_float4x4 = matrix_multiply(self.scaleMatrix, tr)
+//
+//            return trs
+//        }
+        
+        
+        //The coordinate system of view matrix must be the same as project matrix
         let distance = Float(1.0 / tan(radians_from_degrees(30)))
-    
-        //The coordinate system of view matrix must be the same as project matrix, aka, left hand
         let viewMatrix = matrix_look_at_left_hand(0.0, 0.0, -distance, // camera position
                                                   0.0, 0.0, 0.0,  // world center
                                                   0.0, 1.0, 0.0)  // camera orientation
-        let modelMatrix = str
-        let mvp = matrix_multiply(projectionMatrix, matrix_multiply(viewMatrix, modelMatrix));
+        let mvp = matrix_multiply(projectionMatrix, matrix_multiply(viewMatrix, modelMatrix()))
         return mvp
     }
 }
