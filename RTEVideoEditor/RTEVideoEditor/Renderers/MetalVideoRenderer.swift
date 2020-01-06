@@ -11,6 +11,7 @@ import AVFoundation
 
 class MetalVideoRenderer {
     let device: MTLDevice
+    let filterManager: FilterManager
     var transform: RendererTransform = RendererTransform.init()
     
     private var sampler: MTLSamplerState?
@@ -25,18 +26,22 @@ class MetalVideoRenderer {
     private var curPixelBuffer: CVPixelBuffer?
     
     private let inFlightSemaphore = DispatchSemaphore(value: 1)
-    private var filters: [FilterRenderer] = []
+    
     private let syncQueue: DispatchQueue
     
     private var outputFormatDescription: CMFormatDescription?
     private var outputPixelBufferPool: CVPixelBufferPool?
+    private var filterContext: FilterSharedContext?
     
     init?() {
         guard let device = MTLCreateSystemDefaultDevice() else { return nil }
         
         self.device = device
+        
+        self.filterManager = FilterManager()
+        
         self.syncQueue = DispatchQueue(label: "Metal Renderer Sync Queue",
-                                       qos: .userInitiated,
+                                       qos: .`default`,
                                        attributes: [],
                                        autoreleaseFrequency: .workItem)
         
@@ -130,6 +135,15 @@ class MetalVideoRenderer {
         let uniform = uniformBuffer.contents().bindMemory(to: RTEUniforms.self, capacity: 1)
         uniform[0].mvp = transform.mvp
     }
+    
+    private func makePixelBufferPool(_ pixelBuffer: CVPixelBuffer) -> CVPixelBufferPool? {
+        let pool = allocateOutputBufferPool(pixelFormat: .pixelFormat_32BGRA,
+                                            width: CVPixelBufferGetWidth(pixelBuffer),
+                                            height: CVPixelBufferGetHeight(pixelBuffer),
+                                            bufferCountHint: 3)
+
+        return pool
+    }
 }
 
 extension MetalVideoRenderer: VideoRenderer {
@@ -137,25 +151,17 @@ extension MetalVideoRenderer: VideoRenderer {
         syncQueue.sync { [weak self] in
             guard let `self` = self else { return }
             if (self.outputPixelBufferPool == nil) {
-                let pool = allocateOutputBufferPool(pixelFormat: .pixelFormat_32BGRA,
-                                                    width: CVPixelBufferGetWidth(buffer),
-                                                    height: CVPixelBufferGetHeight(buffer),
-                                                    bufferCountHint: 3)
-                self.outputPixelBufferPool = pool
+                self.outputPixelBufferPool = self.makePixelBufferPool(buffer)
+                self.filterContext = FilterSharedContext(device: self.device,
+                                                   commandQueue: self.commandQueue,
+                                                   textureCache: self.textureCache,
+                                                   pixelBufferPool: outputPixelBufferPool,
+                                                   drawableSize: self.transform.drawableSize)
                 
-                for i in 0..<self.filters.count {
-                    self.filters[i].context = FilterRendererContext(device: self.device, commandQueue: self.commandQueue, textureCache: self.textureCache, pixelBufferPool: pool)
-                }
             }
         }
-        
-        self.curPixelBuffer = buffer
-        self.filters.forEach { (filter) in
-            if let pixelBuffer = self.curPixelBuffer {
-                filter.prepare()
-                self.curPixelBuffer = filter.render(pixelBuffer: pixelBuffer)
-            }
-        }
+
+        self.curPixelBuffer = filterManager.render(pixelBuffer: buffer, context: filterContext!)
     }
     
     func presentDrawable(_ drawable: Drawable?) {
@@ -239,13 +245,6 @@ extension MetalVideoRenderer: VideoRenderer {
         
         commandBuffer.commit()
     }
-    
-    func addFilter(_ filter: FilterRenderer) {
-        syncQueue.sync { [weak self] in
-            guard let `self` = self else { return }
-            self.filters.append(filter)
-        }
-    }
 }
 
 extension MetalVideoRenderer: VideoTransformDelegate {
@@ -253,6 +252,7 @@ extension MetalVideoRenderer: VideoTransformDelegate {
         syncQueue.async {
             self.outputPixelBufferPool = nil
             self.outputFormatDescription = nil
+            self.filterContext = nil
         }
     }
 }

@@ -7,6 +7,9 @@
 //
 
 import AVFoundation
+import UIKit
+import MetalKit
+import MetalPerformanceShaders
 
 protocol VideoTransformDelegate: class {
     func rendererDidChangeDrawableSize(_ viewport: CGSize)
@@ -26,13 +29,7 @@ class RendererTransform {
                 Logger.shared.transfrom("drawableSize: \(drawableSize)")
                 
                 let aspect = drawableSize.width / drawableSize.height
-                //How projective matrix define:
-                //http://ogldev.atspace.co.uk/www/tutorial12/tutorial12.html
-               
-                //What the different between L and R hand
-               //https://www.gamedev.net/articles/programming/graphics/perspective-projections-in-lh-and-rh-systems-r3598/
                 projectionMatrix = matrix_perspective_left_hand(radians_from_degrees(60), Float(aspect), 0.001, 10.0);
-               
                 delegate?.rendererDidChangeDrawableSize(drawableSize)
             }
         }
@@ -45,7 +42,7 @@ class RendererTransform {
             }
         }
     }
-    
+
     init() {
         self.projectionMatrix = matrix4x4_identity()
         self.scaleMatrix = matrix4x4_scale(1.0, 1.0, 1.0)
@@ -118,15 +115,5 @@ class RendererTransform {
                                                   0.0, 1.0, 0.0)  // camera orientation
         let mvp = matrix_multiply(projectionMatrix, matrix_multiply(viewMatrix, modelMatrix()))
         return mvp
-    }
-}
-
-extension CGSize {
-    func isValid() -> Bool {
-        return self.width != 0 && self.height != 0
-    }
-    
-    func ratio() -> CGFloat {
-        return self.width / self.height
     }
 }

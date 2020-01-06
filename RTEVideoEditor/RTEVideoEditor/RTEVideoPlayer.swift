@@ -9,17 +9,28 @@
 import UIKit
 import AVFoundation
 
+protocol RTEVideoPlayerDelegate: class {
+    func playerSliderDidChange(_ player: RTEVideoPlayer)
+    func playerDidPlayToEnd(_ player: RTEVideoPlayer)
+}
+
 class RTEVideoPlayer {
     let layer: VideoPlayerLayer
     
-    private var displayLink: CADisplayLink?
     private let renderer: VideoRenderer?
-    private var frameExtractor: VideoFrameExtractor
+    private var displayLink: CADisplayLink?
+    private var frameProvider: VideoFrameProvider
+    weak var delegate: RTEVideoPlayerDelegate?
     
-    var asset: AVAsset? {
-        didSet {
-            frameExtractor.asset = asset
-        }
+    var asset: AVAsset? { didSet { frameProvider.asset = asset } }
+    
+    var duration: CMTime {
+        guard let asset = frameProvider.asset else { return CMTime.zero }
+        return asset.duration
+    }
+    
+    var progress: Float {
+        return Float(frameProvider.duration / CMTimeGetSeconds(duration))
     }
     
     init() {
@@ -31,10 +42,7 @@ class RTEVideoPlayer {
         
         self.layer = metalView
         self.renderer = metalRenderer
-        self.frameExtractor = AVVideoFrameExtractor.init()
-        
-        //Filters
-        self.renderer?.addFilter(RosyFilterRenderer())
+        self.frameProvider = AVVideoFrameProvider.init()
         
         setupDisplayLink()
     }
@@ -42,17 +50,32 @@ class RTEVideoPlayer {
     @discardableResult func start() -> Bool {
         guard self.asset != nil else { return false }
         displayLink?.isPaused = false
-        frameExtractor.isPaused = false
+        frameProvider.isPaused = false
         return true
     }
     
     func stop() {
         displayLink?.isPaused = true
-        frameExtractor.isPaused = true
+        frameProvider.isPaused = true
     }
     
-    func seekToTime(_ time: CMTime) {
-        frameExtractor.seekToTime(time)
+    func seekToTime(_ time: CMTime, autoPlay: Bool = true) {
+        frameProvider.seekToTime(time)
+        frameProvider.isPaused = !autoPlay
+    }
+    
+    func setNeedDisplay() {
+        frameProvider.replay()
+    }
+    
+    func add(filter: RTEFilter) {
+        self.renderer?.filterManager.add(filter: filter)
+        self.setNeedDisplay()
+    }
+    
+    func remove(filter: RTEFilter) {
+        self.renderer?.filterManager.remove(filter: filter)
+        self.setNeedDisplay()
     }
     
     deinit {
@@ -66,12 +89,21 @@ class RTEVideoPlayer {
     
     @objc func redraw(sender: CADisplayLink) {
         let timeInterval = sender.timestamp + sender.duration
-        frameExtractor.pixelBuffer(at: timeInterval) { [weak self] (result) in
-            guard let context = try? result.get() else { return }
-            
-            self?.renderer?.processPixelBuffer(context.pixelBuffer, at: context.time)
-            
-            self?.renderer?.presentDrawable(self?.layer.nextDrawable())
+        frameProvider.pixelBuffer(at: timeInterval) { [weak self] (result) in
+            guard let `self` = self else { return }
+            switch result {
+            case .success(let context):
+                self.renderer?.processPixelBuffer(context.pixelBuffer, at: context.time)
+                self.renderer?.presentDrawable(self.layer.nextDrawable())
+                DispatchQueue.main.async {
+                    self.delegate?.playerSliderDidChange(self)
+                }
+            case .failure(let status):
+                switch status {
+                case .finish: self.delegate?.playerDidPlayToEnd(self)
+                default: break
+                }
+            }
         }
     }
 }

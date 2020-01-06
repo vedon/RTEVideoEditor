@@ -6,15 +6,25 @@
 //  Copyright © 2020 Free. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import AVFoundation
 
-class RosyFilterRenderer {
+class RosyFilter: FilterQuickLook {
+    let id: String
     var computePipelineState: MTLComputePipelineState?
-    var context: FilterRendererContext? {
+    var context: FilterSharedContext? {
         didSet {
            computePipelineState = nil
         }
+    }
+    var params: FilterParams?
+    
+    var quickLookDesc: String? {
+        return "Rosy Filter"
+    }
+    
+    init() {
+        self.id = NSUUID().uuidString
     }
     
     private func makeRosyPipelineState() -> MTLComputePipelineState? {
@@ -29,35 +39,31 @@ class RosyFilterRenderer {
     }
 }
 
-extension RosyFilterRenderer: FilterRenderer {
+extension RosyFilter: RTEFilterImp {
+    var identifier: String {
+        return self.id
+    }
+    
     func prepare() {
         if self.computePipelineState == nil {
             self.computePipelineState = makeRosyPipelineState()
         }
     }
     
-    func render(pixelBuffer: CVPixelBuffer) -> CVPixelBuffer? {
+    func render(pixelBuffer: CVPixelBuffer) -> CVPixelBuffer {
         guard let context = self.context,
             let commandQueue = context.commandQueue,
             let commandBuffer = commandQueue.makeCommandBuffer(),
             let commandEncoder = commandBuffer.makeComputeCommandEncoder(),
-            let computePipelineState = self.computePipelineState,
-            let pixelBufferPool = context.pixelBufferPool  else {
+            let computePipelineState = self.computePipelineState else {
             
             assertionFailure("Invalid Renderer Context")
             return pixelBuffer
         }
         
-        var newPixelBuffer: CVPixelBuffer?
-        CVPixelBufferPoolCreatePixelBuffer(kCFAllocatorDefault, pixelBufferPool, &newPixelBuffer)
-        
-        guard let outputPixelBuffer = newPixelBuffer else {
-            assertionFailure("Allocation failure")
+        guard let (inputTexture, outputTexture, outputPixelBuffer) = context.makeInOutTexture(pixelBuffer) else {
+            assertionFailure("Allocation Texture Failure")
             return pixelBuffer
-        }
-        guard let inputTexture = makeTextureFromCVPixelBuffer(pixelBuffer, textureFormat: .bgra8Unorm, cache: context.textureCache),
-            let outputTexture = makeTextureFromCVPixelBuffer(outputPixelBuffer, textureFormat: .bgra8Unorm, cache: context.textureCache) else {
-                return nil
         }
         
         commandEncoder.label = "Rosy"
@@ -75,7 +81,7 @@ extension RosyFilterRenderer: FilterRenderer {
         
         commandEncoder.endEncoding()
         commandBuffer.commit()
-        
+
         return outputPixelBuffer
     }
 }

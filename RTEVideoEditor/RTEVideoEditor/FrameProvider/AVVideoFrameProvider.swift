@@ -1,36 +1,22 @@
 //
-//  MediaFrameExtractor.swift
+//  AVVideoFrameProvider.swift
 //  RTEVideoEditor
 //
-//  Created by weidong fu on 2019/12/30.
-//  Copyright © 2019 Free. All rights reserved.
+//  Created by weidong fu on 2020/1/4.
+//  Copyright © 2020 Free. All rights reserved.
 //
 
 import Foundation
 import AVFoundation
 
-enum ExtractStatus: Error {
-    case empty
-}
-
-struct ExtractorContext {
-    let pixelBuffer: CVPixelBuffer
-    let time: CMTime
-}
-
-typealias ExtractCompletion = (_ result: Result<ExtractorContext, ExtractStatus>) -> Void
-
-protocol VideoFrameExtractor {
-    var asset: AVAsset? { get set }
-    var isPaused: Bool { get set }
-    func seekToTime(_ time: CMTime)
-    func pixelBuffer(at timeInterval: Double, completion: ExtractCompletion)
-}
-
-class AVVideoFrameExtractor: NSObject {
+class AVVideoFrameProvider: NSObject {
     private let outputItemProcessQueue: DispatchQueue
     private var playItem: AVPlayerItem?
     private var player: AVPlayer?
+    private var didPlayToEnd: Bool = false
+    private var latestPixelBuffer: CVPixelBuffer?
+    private var forceRender: Bool = false
+    var duration: Double = 0.0
     
     var isPaused: Bool = true {
         didSet {
@@ -50,6 +36,8 @@ class AVVideoFrameExtractor: NSObject {
             self.player = AVPlayer.init(playerItem: playItem)
             self.playItem = playItem
             self.playItem?.add(self.outputItem)
+
+            NotificationCenter.default.addObserver(self, selector: #selector(didFinishPlay(_:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playItem)
         }
     }
     
@@ -67,31 +55,55 @@ class AVVideoFrameExtractor: NSObject {
         self.outputItemProcessQueue = DispatchQueue.init(label: "VideoFrameExtractor.OutputItem")
         super.init()
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc private func didFinishPlay(_ notification: NSNotification) {
+        outputItemProcessQueue.sync {
+            self.didPlayToEnd = true
+        }
+    }
 }
 
-extension AVVideoFrameExtractor: VideoFrameExtractor {
+extension AVVideoFrameProvider: VideoFrameProvider {
     func pixelBuffer(at timeInterval: Double, completion: (Result<ExtractorContext, ExtractStatus>) -> Void) {
+        guard didPlayToEnd == false else {
+            completion(.failure(.finish))
+            return
+        }
         
-        let time = self.outputItem.itemTime(forHostTime: timeInterval)
+        let time = outputItem.itemTime(forHostTime: timeInterval)
+        self.duration = CMTimeGetSeconds(time)
+        
+        if self.forceRender, let newPixelBuffer = self.latestPixelBuffer {
+            self.forceRender = false
+            completion(.success(ExtractorContext(pixelBuffer: newPixelBuffer, time: time)))
+        }
+        
         guard outputItem.hasNewPixelBuffer(forItemTime: time) else {
             completion(.failure(.empty))
             return
         }
         
-        guard let buffer = outputItem.copyPixelBuffer(forItemTime: time, itemTimeForDisplay: nil) else {
+        guard let newPixelBuffer = outputItem.copyPixelBuffer(forItemTime: time, itemTimeForDisplay: nil) else {
             completion(.failure(.empty))
             return
         }
-        
-        completion(.success(ExtractorContext(pixelBuffer: buffer, time: time)))
+        self.latestPixelBuffer = newPixelBuffer
+        completion(.success(ExtractorContext(pixelBuffer: newPixelBuffer, time: time)))
     }
     
     func seekToTime(_ time: CMTime) {
         Logger.shared.image("Seek to time \(CMTimeGetSeconds(time))")
+        outputItemProcessQueue.sync {
+            self.didPlayToEnd = false
+        }
         
-        self.player?.pause()
+        player?.pause()
+        
         NSObject.cancelPreviousPerformRequests(withTarget: self)
-        
         let toleranceBefore = CMTimeMakeWithSeconds(0.1, preferredTimescale: Int32(NSEC_PER_SEC))
         let toleranceAfter = CMTimeMakeWithSeconds(0.1, preferredTimescale: Int32(NSEC_PER_SEC))
         
@@ -100,10 +112,16 @@ extension AVVideoFrameExtractor: VideoFrameExtractor {
         })
     }
     
+    func replay() {
+        self.forceRender = true
+    }
+    
     @objc private func deferToPlay() {
-        self.player?.play()
+        if !self.isPaused {
+            self.player?.play()
+        }
     }
 }
 
-extension AVVideoFrameExtractor: AVPlayerItemOutputPullDelegate {
+extension AVVideoFrameProvider: AVPlayerItemOutputPullDelegate {
 }

@@ -13,14 +13,23 @@
 		70068A9A23C01E02002796B6 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70068A9923C01E01002796B6 /* Logger.swift */; };
 		70068A9D23C01E0E002796B6 /* VideoPlayerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70068A9C23C01E0E002796B6 /* VideoPlayerLayer.swift */; };
 		70068A9F23C01E26002796B6 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70068A9E23C01E26002796B6 /* MetalView.swift */; };
-		702614A323BA03ED00594FBD /* VideoFrameExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702614A223BA03ED00594FBD /* VideoFrameExtractor.swift */; };
 		703E1E0D23BAF8BD005E4B7B /* RosyEffect.metal in Sources */ = {isa = PBXBuildFile; fileRef = 703E1E0923BAF8BD005E4B7B /* RosyEffect.metal */; };
 		703E1E1023BAF8BD005E4B7B /* PassThrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = 703E1E0C23BAF8BD005E4B7B /* PassThrough.metal */; };
-		703E1E1323BB438A005E4B7B /* cat.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 703E1E1223BB438A005E4B7B /* cat.MP4 */; };
-		709A7ABE23BF2E6C001704F3 /* FilterRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7ABD23BF2E6C001704F3 /* FilterRenderer.swift */; };
-		709A7AC023BF2E84001704F3 /* RosyFilterRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7ABF23BF2E84001704F3 /* RosyFilterRenderer.swift */; };
+		709A7ABE23BF2E6C001704F3 /* RTEFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7ABD23BF2E6C001704F3 /* RTEFilter.swift */; };
 		709A7D5723BF4A25001704F3 /* MetalVideoRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7D5623BF4A25001704F3 /* MetalVideoRenderer.swift */; };
 		709A7D5A23BF4AC5001704F3 /* CVPixelBufferPoolUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7D5923BF4AC5001704F3 /* CVPixelBufferPoolUtil.swift */; };
+		70BCC39E23C2E05300C68716 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCC39D23C2E05300C68716 /* UIImage+extension.swift */; };
+		70BCC3A223C2F8BD00C68716 /* RosyFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCC3A123C2F8BD00C68716 /* RosyFilter.swift */; };
+		70BCC3A423C30CF200C68716 /* CGSize+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCC3A323C30CF200C68716 /* CGSize+extension.swift */; };
+		70BCC3A623C31EF700C68716 /* FilterSharedContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCC3A523C31EF700C68716 /* FilterSharedContext.swift */; };
+		70BCC3A823C3261100C68716 /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCC3A723C3261100C68716 /* FilterManager.swift */; };
+		70BCC3AB23C33BE300C68716 /* VideoFrameProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCC3AA23C33BE300C68716 /* VideoFrameProvider.swift */; };
+		70BCC3AD23C33BF800C68716 /* AVVideoFrameProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCC3AC23C33BF800C68716 /* AVVideoFrameProvider.swift */; };
+		70BCC3B023C33C2C00C68716 /* cat.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 70BCC3AF23C33C2C00C68716 /* cat.MP4 */; };
+		70BCC3B223C36C2500C68716 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCC3B123C36C2500C68716 /* FilterCell.swift */; };
+		70BCC3B423C36D3700C68716 /* EditControlPannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCC3B323C36D3700C68716 /* EditControlPannel.swift */; };
+		70BCC3B623C375EF00C68716 /* UITableView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCC3B523C375EF00C68716 /* UITableView+extension.swift */; };
+		70BCC3BD23C38A7F00C68716 /* DownsampleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCC3BC23C38A7F00C68716 /* DownsampleFilter.swift */; };
 		70E4428923B88C9000039879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E4428823B88C9000039879 /* AppDelegate.swift */; };
 		70E4428B23B88C9000039879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E4428A23B88C9000039879 /* SceneDelegate.swift */; };
 		70E4428D23B88C9000039879 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E4428C23B88C9000039879 /* ViewController.swift */; };
@@ -39,16 +48,25 @@
 		70068A9923C01E01002796B6 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		70068A9C23C01E0E002796B6 /* VideoPlayerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerLayer.swift; sourceTree = "<group>"; };
 		70068A9E23C01E26002796B6 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
-		702614A223BA03ED00594FBD /* VideoFrameExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFrameExtractor.swift; sourceTree = "<group>"; };
 		703E1E0923BAF8BD005E4B7B /* RosyEffect.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = RosyEffect.metal; sourceTree = "<group>"; };
 		703E1E0C23BAF8BD005E4B7B /* PassThrough.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PassThrough.metal; sourceTree = "<group>"; };
-		703E1E1223BB438A005E4B7B /* cat.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cat.MP4; sourceTree = "<group>"; };
 		703E1E1E23BB5B9F005E4B7B /* RTEVideoEditor-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RTEVideoEditor-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		703E1E2323BC3FB5005E4B7B /* RTEShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTEShaderTypes.h; sourceTree = "<group>"; };
-		709A7ABD23BF2E6C001704F3 /* FilterRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRenderer.swift; sourceTree = "<group>"; };
-		709A7ABF23BF2E84001704F3 /* RosyFilterRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosyFilterRenderer.swift; sourceTree = "<group>"; };
+		709A7ABD23BF2E6C001704F3 /* RTEFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTEFilter.swift; sourceTree = "<group>"; };
 		709A7D5623BF4A25001704F3 /* MetalVideoRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalVideoRenderer.swift; sourceTree = "<group>"; };
 		709A7D5923BF4AC5001704F3 /* CVPixelBufferPoolUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPixelBufferPoolUtil.swift; sourceTree = "<group>"; };
+		70BCC39D23C2E05300C68716 /* UIImage+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
+		70BCC3A123C2F8BD00C68716 /* RosyFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RosyFilter.swift; sourceTree = "<group>"; };
+		70BCC3A323C30CF200C68716 /* CGSize+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+extension.swift"; sourceTree = "<group>"; };
+		70BCC3A523C31EF700C68716 /* FilterSharedContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSharedContext.swift; sourceTree = "<group>"; };
+		70BCC3A723C3261100C68716 /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
+		70BCC3AA23C33BE300C68716 /* VideoFrameProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFrameProvider.swift; sourceTree = "<group>"; };
+		70BCC3AC23C33BF800C68716 /* AVVideoFrameProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVVideoFrameProvider.swift; sourceTree = "<group>"; };
+		70BCC3AF23C33C2C00C68716 /* cat.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cat.MP4; sourceTree = "<group>"; };
+		70BCC3B123C36C2500C68716 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		70BCC3B323C36D3700C68716 /* EditControlPannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditControlPannel.swift; sourceTree = "<group>"; };
+		70BCC3B523C375EF00C68716 /* UITableView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extension.swift"; sourceTree = "<group>"; };
+		70BCC3BC23C38A7F00C68716 /* DownsampleFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownsampleFilter.swift; sourceTree = "<group>"; };
 		70E4428523B88C9000039879 /* RTEVideoEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTEVideoEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70E4428823B88C9000039879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70E4428A23B88C9000039879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,19 +121,14 @@
 			path = Shaders;
 			sourceTree = "<group>";
 		};
-		703E1E1123BB438A005E4B7B /* Videos */ = {
-			isa = PBXGroup;
-			children = (
-				703E1E1223BB438A005E4B7B /* cat.MP4 */,
-			);
-			path = Videos;
-			sourceTree = "<group>";
-		};
 		709A7ABA23BF2DCF001704F3 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
-				709A7ABD23BF2E6C001704F3 /* FilterRenderer.swift */,
-				709A7ABF23BF2E84001704F3 /* RosyFilterRenderer.swift */,
+				70BCC3BC23C38A7F00C68716 /* DownsampleFilter.swift */,
+				709A7ABD23BF2E6C001704F3 /* RTEFilter.swift */,
+				70BCC3A123C2F8BD00C68716 /* RosyFilter.swift */,
+				70BCC3A523C31EF700C68716 /* FilterSharedContext.swift */,
+				70BCC3A723C3261100C68716 /* FilterManager.swift */,
 			);
 			path = Filters;
 			sourceTree = "<group>";
@@ -136,8 +149,29 @@
 				70068A9923C01E01002796B6 /* Logger.swift */,
 				70068A9323BF4C4B002796B6 /* Math */,
 				709A7D5923BF4AC5001704F3 /* CVPixelBufferPoolUtil.swift */,
+				70BCC39D23C2E05300C68716 /* UIImage+extension.swift */,
+				70BCC3A323C30CF200C68716 /* CGSize+extension.swift */,
+				70BCC3B523C375EF00C68716 /* UITableView+extension.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		70BCC3A923C33BE300C68716 /* FrameProvider */ = {
+			isa = PBXGroup;
+			children = (
+				70BCC3AA23C33BE300C68716 /* VideoFrameProvider.swift */,
+				70BCC3AC23C33BF800C68716 /* AVVideoFrameProvider.swift */,
+			);
+			name = FrameProvider;
+			path = RTEVideoEditor/FrameProvider;
+			sourceTree = SOURCE_ROOT;
+		};
+		70BCC3AE23C33C2C00C68716 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				70BCC3AF23C33C2C00C68716 /* cat.MP4 */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		70E4427C23B88C9000039879 = {
@@ -161,11 +195,12 @@
 		70E4428723B88C9000039879 /* RTEVideoEditor */ = {
 			isa = PBXGroup;
 			children = (
+				70BCC3AE23C33C2C00C68716 /* Resources */,
+				70BCC3A923C33BE300C68716 /* FrameProvider */,
 				70068A9B23C01E0E002796B6 /* PlayerLayer */,
 				709A7D5823BF4A3C001704F3 /* Utils */,
 				709A7D5523BF4A10001704F3 /* Renderers */,
 				709A7ABA23BF2DCF001704F3 /* Filters */,
-				703E1E1123BB438A005E4B7B /* Videos */,
 				703E1E0823BAF8BD005E4B7B /* Shaders */,
 				70E4428823B88C9000039879 /* AppDelegate.swift */,
 				70E4428A23B88C9000039879 /* SceneDelegate.swift */,
@@ -175,8 +210,9 @@
 				70E4429323B88C9100039879 /* LaunchScreen.storyboard */,
 				70E4429623B88C9100039879 /* Info.plist */,
 				70E4429C23B99FA400039879 /* RTEVideoPlayer.swift */,
-				702614A223BA03ED00594FBD /* VideoFrameExtractor.swift */,
 				703E1E1E23BB5B9F005E4B7B /* RTEVideoEditor-Bridging-Header.h */,
+				70BCC3B123C36C2500C68716 /* FilterCell.swift */,
+				70BCC3B323C36D3700C68716 /* EditControlPannel.swift */,
 			);
 			path = RTEVideoEditor;
 			sourceTree = "<group>";
@@ -260,7 +296,7 @@
 			files = (
 				70E4429523B88C9100039879 /* LaunchScreen.storyboard in Resources */,
 				70E4429223B88C9100039879 /* Assets.xcassets in Resources */,
-				703E1E1323BB438A005E4B7B /* cat.MP4 in Resources */,
+				70BCC3B023C33C2C00C68716 /* cat.MP4 in Resources */,
 				70E4429023B88C9000039879 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,8 +351,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				709A7D5723BF4A25001704F3 /* MetalVideoRenderer.swift in Sources */,
+				70BCC3B223C36C2500C68716 /* FilterCell.swift in Sources */,
 				70E4429D23B99FA400039879 /* RTEVideoPlayer.swift in Sources */,
+				70BCC3B623C375EF00C68716 /* UITableView+extension.swift in Sources */,
 				70068A9F23C01E26002796B6 /* MetalView.swift in Sources */,
+				70BCC39E23C2E05300C68716 /* UIImage+extension.swift in Sources */,
+				70BCC3AD23C33BF800C68716 /* AVVideoFrameProvider.swift in Sources */,
 				70068A9223BF4C21002796B6 /* RendererTransform.swift in Sources */,
 				703E1E0D23BAF8BD005E4B7B /* RosyEffect.metal in Sources */,
 				70068A9823C01DC0002796B6 /* VideoRenderer.swift in Sources */,
@@ -325,12 +365,17 @@
 				70E4428D23B88C9000039879 /* ViewController.swift in Sources */,
 				70068A9623BF4C4B002796B6 /* AAPLMathUtilities.m in Sources */,
 				709A7D5A23BF4AC5001704F3 /* CVPixelBufferPoolUtil.swift in Sources */,
-				709A7ABE23BF2E6C001704F3 /* FilterRenderer.swift in Sources */,
+				709A7ABE23BF2E6C001704F3 /* RTEFilter.swift in Sources */,
+				70BCC3A823C3261100C68716 /* FilterManager.swift in Sources */,
 				70E4428923B88C9000039879 /* AppDelegate.swift in Sources */,
+				70BCC3A423C30CF200C68716 /* CGSize+extension.swift in Sources */,
+				70BCC3BD23C38A7F00C68716 /* DownsampleFilter.swift in Sources */,
+				70BCC3AB23C33BE300C68716 /* VideoFrameProvider.swift in Sources */,
+				70BCC3B423C36D3700C68716 /* EditControlPannel.swift in Sources */,
+				70BCC3A223C2F8BD00C68716 /* RosyFilter.swift in Sources */,
 				70068A9A23C01E02002796B6 /* Logger.swift in Sources */,
 				70E4428B23B88C9000039879 /* SceneDelegate.swift in Sources */,
-				709A7AC023BF2E84001704F3 /* RosyFilterRenderer.swift in Sources */,
-				702614A323BA03ED00594FBD /* VideoFrameExtractor.swift in Sources */,
+				70BCC3A623C31EF700C68716 /* FilterSharedContext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,7 +531,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Free.RTEVideoEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = YipengHao_Wildcard;
+				PROVISIONING_PROFILE_SPECIFIER = Yipeng_Hao_Wildcard_85HEZ7Y9TR;
 				SWIFT_OBJC_BRIDGING_HEADER = "RTEVideoEditor-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -509,7 +554,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Free.RTEVideoEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = YipengHao_Wildcard;
+				PROVISIONING_PROFILE_SPECIFIER = Yipeng_Hao_Wildcard_85HEZ7Y9TR;
 				SWIFT_OBJC_BRIDGING_HEADER = "RTEVideoEditor-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
