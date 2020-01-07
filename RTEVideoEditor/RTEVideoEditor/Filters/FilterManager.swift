@@ -7,7 +7,7 @@
 //
 
 import AVFoundation
-
+//https://github.com/alexiscn/MetalFilters
 class FilterManager {
     private(set) var filters: [RTEFilter] = []
     private var filtersImp: [String: RTEFilterImp] = [:]
