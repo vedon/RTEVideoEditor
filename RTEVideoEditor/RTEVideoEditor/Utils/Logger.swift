@@ -22,4 +22,8 @@ class Logger {
     func warn(_ msg: String) {
         print("⚠️: \(msg)")
     }
+    
+    func info(_ msg: String) {
+        print("🌝: \(msg)")
+    }
 }

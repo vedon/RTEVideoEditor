@@ -9,8 +9,8 @@
 import AVFoundation
 //https://github.com/alexiscn/MetalFilters
 class FilterManager {
-    private(set) var filters: [RTEFilter] = []
-    private var filtersImp: [String: RTEFilterImp] = [:]
+    private(set) var filterDescriptors: [RTEFilterDescriptor] = []
+    private var filters: [String: RTEFilter] = [:]
     private var filtersParmasMap: [String: FilterParams] = [:]
     private let syncQueue: DispatchQueue
     
@@ -22,44 +22,55 @@ class FilterManager {
         
     }
     
-    func render(pixelBuffer: CVPixelBuffer, context: FilterSharedContext) -> CVPixelBuffer {
-        var outputPixelBuffer = pixelBuffer
-        self.filters.forEach { (filter) in
-            var filterImp = filtersImp[filter.identifier]
-            if filterImp == nil {
-                switch filter.type {
-                case .rosy: filterImp = RosyFilter()
-                case .downsample: filterImp = DownsampleFilter()
+    func render(pixelBuffer: CVPixelBuffer, context: RenderSharedContext) -> CVPixelBuffer {
+        guard var outputPixelBuffer = context.pixelBufferPool.newPixelBufferFrom(pixelBuffer: pixelBuffer, copy: true) else {
+            return pixelBuffer
+        }
+        
+        self.filterDescriptors.forEach { (descriptor) in
+            var filter: RTEFilter?
+            if filters[descriptor.identifier] == nil {
+                switch descriptor.type {
+                case .rosy: filter = RosyFilter(context: context)
+                case .downsample: filter = DownsampleFilter(context: context)
+                case .moon: filter = MoonFilter(context: context)
+                case .sutro: filter = SutroFilter(context: context)
+                case .rise: filter = RiseFilter(context: context)
+                case .canvas: filter = CanvasFilter(context: context)
                 }
+                
+                filters[descriptor.identifier] = filter
+            } else {
+                filter = filters[descriptor.identifier]!
             }
-            filterImp?.context = context
             
-            filterImp?.params = filtersParmasMap[filter.identifier]
-            
-            filterImp?.prepare()
-            
-            outputPixelBuffer = filterImp!.render(pixelBuffer: outputPixelBuffer)
+            if var filter = filter {
+                filter.params = filtersParmasMap[descriptor.identifier]
+                
+                filter.prepare()
+                outputPixelBuffer = filter.render(pixelBuffer: outputPixelBuffer)
+            }
         }
         
         return outputPixelBuffer
     }
     
-    func add(filter: RTEFilter) {
+    func add(filterDescriptor: RTEFilterDescriptor) {
         syncQueue.sync {
-            self.filters.append(filter)
+            self.filterDescriptors.append(filterDescriptor)
         }
     }
     
-    func update(filter: RTEFilter, params: FilterParams) {
+    func update(filterDescriptor: RTEFilterDescriptor, params: FilterParams) {
         syncQueue.sync {
-            self.filtersParmasMap[filter.identifier] = params
+            self.filtersParmasMap[filterDescriptor.identifier] = params
         }
     }
     
-    func remove(filter: RTEFilter) {
+    func remove(filterDescriptor: RTEFilterDescriptor) {
         syncQueue.sync {
-            if let index = self.filters.firstIndex(where: { $0.identifier == filter.identifier }) {
-                self.filters.remove(at: index)
+            if let index = self.filterDescriptors.firstIndex(where: { $0.identifier == filterDescriptor.identifier }) {
+                self.filterDescriptors.remove(at: index)
             }
         }
     }

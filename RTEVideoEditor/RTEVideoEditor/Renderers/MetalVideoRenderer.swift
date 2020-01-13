@@ -22,7 +22,7 @@ class MetalVideoRenderer {
     private(set) var pixelFormat: MTLPixelFormat = .bgra8Unorm
 
     private var uniformBuffer: MTLBuffer!
-    private var quadVertexBuffer: MTLBuffer!
+    private var vertexBuffer: MTLBuffer!
     private var curPixelBuffer: CVPixelBuffer?
     
     private let inFlightSemaphore = DispatchSemaphore(value: 1)
@@ -30,8 +30,7 @@ class MetalVideoRenderer {
     private let syncQueue: DispatchQueue
     
     private var outputFormatDescription: CMFormatDescription?
-    private var outputPixelBufferPool: CVPixelBufferPool?
-    private var filterContext: FilterSharedContext?
+    private var filterContext: RenderSharedContext?
     
     init?() {
         guard let device = MTLCreateSystemDefaultDevice() else { return nil }
@@ -66,14 +65,8 @@ class MetalVideoRenderer {
         pipelineDescriptor.colorAttachments[0].pixelFormat = pixelFormat
         pipelineDescriptor.vertexFunction = defaultLibrary.makeFunction(name: "vertexPassThrough")
         pipelineDescriptor.fragmentFunction = defaultLibrary.makeFunction(name: "fragmentPassThrough")
-        
-        let samplerDescriptor = MTLSamplerDescriptor()
-        samplerDescriptor.sAddressMode = .clampToEdge
-        samplerDescriptor.tAddressMode = .clampToEdge
-        samplerDescriptor.minFilter = .linear
-        samplerDescriptor.magFilter = .linear
-        sampler = device.makeSamplerState(descriptor: samplerDescriptor)
-        
+    
+        sampler = RTESampler.clampToEdge.makeWith(device: device)
         do {
             pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
         } catch {
@@ -120,8 +113,8 @@ class MetalVideoRenderer {
     private func setupTransform() {
         transform.delegate = self
         //For more memory managament, go to http://metalkit.org/2017/04/30/working-with-memory-in-metal.html
-        quadVertexBuffer = device.makeBuffer(bytes: transform.quadVertices, length: transform.quadVertices.count * MemoryLayout<RTEVertex>.stride, options: [])
-        quadVertexBuffer.label = "Quad_vertex_buffer"
+        vertexBuffer = device.makeBuffer(bytes: transform.quadVertices, length: transform.quadVertices.count * MemoryLayout<RTEVertex>.stride, options: [])
+        vertexBuffer.label = "Vertex_buffer"
         
         uniformBuffer = device.makeBuffer(length: MemoryLayout<RTEUniforms>.stride, options: .storageModeShared)
         uniformBuffer.label = "Uniform_buffer"
@@ -149,18 +142,14 @@ class MetalVideoRenderer {
 extension MetalVideoRenderer: VideoRenderer {
     func processPixelBuffer(_ buffer: CVPixelBuffer, at time: CMTime) {
         syncQueue.sync { [weak self] in
-            guard let `self` = self else { return }
-            if (self.outputPixelBufferPool == nil) {
-                self.outputPixelBufferPool = self.makePixelBufferPool(buffer)
-                self.filterContext = FilterSharedContext(device: self.device,
-                                                   commandQueue: self.commandQueue,
-                                                   textureCache: self.textureCache,
-                                                   pixelBufferPool: outputPixelBufferPool,
-                                                   drawableSize: self.transform.drawableSize)
-                
+            guard let `self` = self, let textureCache = self.textureCache else { return }
+            if self.filterContext == nil {
+                self.filterContext = RenderSharedContext(device: self.device,
+                                                   textureCache: textureCache,
+                                                   drawableSize: self.transform.drawableSize,
+                                                   pixelFormat: self.pixelFormat)
             }
         }
-
         self.curPixelBuffer = filterManager.render(pixelBuffer: buffer, context: filterContext!)
     }
     
@@ -210,13 +199,13 @@ extension MetalVideoRenderer: VideoRenderer {
         }
         
         if self.textureCache == nil { setupTextureCache() }
-        let texture = makeTextureFromCVPixelBuffer(pixelBuffer, textureFormat: self.pixelFormat, cache: textureCache)
+        let texture = makeMTLTextureFromCVPixelBuffer(pixelBuffer, textureFormat: self.pixelFormat, cache: textureCache)
         
         commandEncoder.pushDebugGroup("Draw video")
         commandEncoder.setRenderPipelineState(pipelineState)
         commandEncoder.setFragmentBuffer(uniformBuffer, offset: 0, index: Int(RTEBufferIndexUniforms.rawValue))
         commandEncoder.setVertexBuffer(uniformBuffer, offset: 0, index: Int(RTEBufferIndexUniforms.rawValue))
-        commandEncoder.setVertexBuffer(quadVertexBuffer, offset: 0, index: Int(RTEBufferIndexVertices.rawValue))
+        commandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: Int(RTEBufferIndexVertices.rawValue))
         
         let viewport = MTLViewport(originX: 0.0,
                                    originY: 0.0,
@@ -242,7 +231,6 @@ extension MetalVideoRenderer: VideoRenderer {
         commandBuffer.addCompletedHandler { (_) in
             self.inFlightSemaphore.signal()
         }
-        
         commandBuffer.commit()
     }
 }
@@ -250,7 +238,6 @@ extension MetalVideoRenderer: VideoRenderer {
 extension MetalVideoRenderer: VideoTransformDelegate {
     func rendererDidChangeDrawableSize(_ viewport: CGSize) {
         syncQueue.async {
-            self.outputPixelBufferPool = nil
             self.outputFormatDescription = nil
             self.filterContext = nil
         }

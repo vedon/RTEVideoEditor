@@ -68,13 +68,13 @@ class RTEVideoPlayer {
         frameProvider.replay()
     }
     
-    func add(filter: RTEFilter) {
-        self.renderer?.filterManager.add(filter: filter)
+    func add(filterDescriptor: RTEFilterDescriptor) {
+        self.renderer?.filterManager.add(filterDescriptor: filterDescriptor)
         self.setNeedDisplay()
     }
     
-    func remove(filter: RTEFilter) {
-        self.renderer?.filterManager.remove(filter: filter)
+    func remove(filterDescriptor: RTEFilterDescriptor) {
+        self.renderer?.filterManager.remove(filterDescriptor: filterDescriptor)
         self.setNeedDisplay()
     }
     

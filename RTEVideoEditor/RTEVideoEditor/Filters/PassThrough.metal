@@ -11,11 +11,7 @@ using namespace metal;
 #include <simd/simd.h>
 #import "RTEShaderTypes.h"
 
-struct VertexIO
-{
-    float4 position [[position]];
-    float2 textureCoord [[user(texturecoord)]];
-};
+using namespace RTEMetal;
 
 vertex VertexIO vertexPassThrough(uint          vid [[ vertex_id ]],
                                   const device  RTEVertex   * in       [[ buffer(RTEBufferIndexVertices) ]],

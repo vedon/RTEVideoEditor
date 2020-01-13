@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-func makeTextureFromCVPixelBuffer(_ pixelBuffer: CVPixelBuffer?, textureFormat: MTLPixelFormat, cache: CVMetalTextureCache?) -> MTLTexture? {
+func makeMTLTextureFromCVPixelBuffer(_ pixelBuffer: CVPixelBuffer?, textureFormat: MTLPixelFormat, cache: CVMetalTextureCache?) -> MTLTexture? {
     
     guard let pixelBuffer = pixelBuffer, let textureCache = cache else { return nil }
     let isPlanar = CVPixelBufferIsPlanar(pixelBuffer)
@@ -24,12 +24,10 @@ func makeTextureFromCVPixelBuffer(_ pixelBuffer: CVPixelBuffer?, textureFormat: 
         
         return nil
     }
-    
     return texture
 }
 
-func allocateOutputBufferPool(pixelFormat: CMFormatDescription.MediaSubType, width: Int, height: Int, bufferCountHint: Int) -> CVPixelBufferPool? {
-    //let formatDesc = try? CMFormatDescription.init(mediaType: .audio, mediaSubType: .pixelFormat_32BGRA)
+func allocateOutputBufferPool(pixelFormat: CMFormatDescription.MediaSubType, width: Int, height: Int, bufferCountHint: Int, preAllocate: Bool = true) -> CVPixelBufferPool? {
     var outputPixelBufferPool: CVPixelBufferPool? = nil
     let pixelBufferAttributes: NSDictionary = [kCVPixelBufferPixelFormatTypeKey: pixelFormat,
                                               kCVPixelBufferWidthKey: width,
@@ -40,21 +38,12 @@ func allocateOutputBufferPool(pixelFormat: CMFormatDescription.MediaSubType, wid
     let poolAttributes: NSDictionary = [kCVPixelBufferPoolMinimumBufferCountKey: bufferCountHint]
     
     CVPixelBufferPoolCreate(kCFAllocatorDefault, poolAttributes, pixelBufferAttributes, &outputPixelBufferPool)
-    return outputPixelBufferPool
-}
+    
+    if preAllocate == true, let pool = outputPixelBufferPool {
+        preallocateBuffers(pool: pool, allocationThreshold: bufferCountHint)
+    }
 
-private func createPixelBufferPool(_ width: Int32, _ height: Int32, _ pixelFormat: OSType, _ maxBufferCount: Int32) -> CVPixelBufferPool? {
-    var outputPool: CVPixelBufferPool? = nil
-    let sourcePixelBufferOptions: NSDictionary = [kCVPixelBufferPixelFormatTypeKey: pixelFormat,
-                                                  kCVPixelBufferWidthKey: width,
-                                                  kCVPixelBufferHeightKey: height,
-                                                  kCVPixelFormatOpenGLESCompatibility: true,
-                                                  kCVPixelBufferIOSurfacePropertiesKey: NSDictionary()]
-    
-    let pixelBufferPoolOptions: NSDictionary = [kCVPixelBufferPoolMinimumBufferCountKey: maxBufferCount]
-    
-    CVPixelBufferPoolCreate(kCFAllocatorDefault, pixelBufferPoolOptions, sourcePixelBufferOptions, &outputPool)
-    return outputPool
+    return outputPixelBufferPool
 }
 
 func allocateOutputBufferPool(with inputFormatDescription: CMFormatDescription, outputRetainedBufferCountHint: Int) ->(

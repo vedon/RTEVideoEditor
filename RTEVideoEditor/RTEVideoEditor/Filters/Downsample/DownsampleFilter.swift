@@ -11,19 +11,22 @@ import MetalKit
 import MetalPerformanceShaders
 
 class DownsampleFilter {
-    let id: String = NSUUID().uuidString
-    var context: FilterSharedContext?
+    var context: RenderSharedContext
     var params: FilterParams?
+    
+    init(context: RenderSharedContext) {
+        self.context = context
+    }
     
     private var lanczos: MPSImageLanczosScale?
     
-    func downsampleSizeForPixelBuffer(_ pixelBuffer: CVPixelBuffer, drawableSize: CGSize) -> MPSScaleTransform {
+    func downsampleSizeForPixelBuffer(_ pixelBuffer: CVPixelBuffer, drawableSize: CGSize) -> (transform: MPSScaleTransform, size: CGSize) {
         let size = CGSize.init(width: CVPixelBufferGetWidth(pixelBuffer),
                                height: CVPixelBufferGetHeight(pixelBuffer))
         return downsample(from: size, to: drawableSize, mode: .scaleAspectFit)
     }
     
-    private func downsample(from inSize: CGSize, to outSize: CGSize, mode: UIView.ContentMode) -> MPSScaleTransform {
+    private func downsample(from inSize: CGSize, to outSize: CGSize, mode: UIView.ContentMode) -> (MPSScaleTransform, CGSize) {
         var scaleX: Double
         var scaleY: Double
         switch mode {
@@ -63,39 +66,34 @@ class DownsampleFilter {
         default:
             fatalError("Not support")
         }
-
-        return MPSScaleTransform(scaleX: scaleX, scaleY: scaleY, translateX: translateX, translateY: translateY)
+        
+        let newSize = CGSize.init(width: inSize.width * CGFloat(scaleX), height: inSize.height * CGFloat(scaleY))
+        let transform = MPSScaleTransform(scaleX: scaleX, scaleY: scaleY, translateX: translateX, translateY: translateY)
+        return (transform, newSize)
     }
 }
 
-extension DownsampleFilter: RTEFilterImp {
-    var identifier: String { return self.id }
-    
+extension DownsampleFilter: RTEFilter {
     func prepare() {
-        guard let device = context?.device else {
-            assertionFailure("Invalid device")
-            return
-        }
-        
         if lanczos == nil {
-            lanczos = MPSImageLanczosScale.init(device: device)
+            lanczos = MPSImageLanczosScale.init(device: context.device)
         }
     }
     
     func render(pixelBuffer: CVPixelBuffer) -> CVPixelBuffer {
-        guard let context = self.context,
-            let commandQueue = context.commandQueue,
-            let commandBuffer = commandQueue.makeCommandBuffer() else {
-            
+        guard let commandBuffer = context.commandQueue?.makeCommandBuffer() else {
             assertionFailure("Invalid Renderer Context")
             return pixelBuffer
         }
+
+        var (transform, size) = downsampleSizeForPixelBuffer(pixelBuffer, drawableSize: context.drawableSize)
         
-        guard let (inputTexture, outputTexture, outputPixelBuffer) = context.makeInOutTexture(pixelBuffer) else {
+        guard let inputTexture = context.textureFrom(pixelBuffer: pixelBuffer),
+            let (outputTexture, outputPixelBuffer) = context.newTextureFrom(pixelBuffer: pixelBuffer, customSize: size) else {
             return pixelBuffer
         }
         
-        var transform = downsampleSizeForPixelBuffer(pixelBuffer, drawableSize: context.drawableSize)
+        
         withUnsafePointer(to: &transform) { (transformPtr: UnsafePointer<MPSScaleTransform>) in
             lanczos?.scaleTransform = transformPtr
             lanczos?.encode(commandBuffer: commandBuffer, sourceTexture: inputTexture, destinationTexture: outputTexture)

@@ -27,7 +27,7 @@ class FilterCell: UITableViewCell {
     }
     
     func setupWith(filterItem: FilterItem) {
-        self.textLabel?.text = filterItem.filter.type.desc
+        self.textLabel?.text = filterItem.descriptor.type.rawValue
         checkMark.image = filterItem.isSelected ? UIImage.init(named: "check-mark") : nil
     }
     

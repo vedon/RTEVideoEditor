@@ -10,6 +10,19 @@
 #define RTEShaderTypes_h
 #include <simd/simd.h>
 
+#if __METAL_MACOS__ || __METAL_IOS__
+//#include <metal_stdlib>
+//using namespace metal;
+
+namespace RTEMetal {
+    struct VertexIO
+    {
+        float4 position [[position]];
+        float2 textureCoord [[user(texturecoord)]];
+    };
+}
+#endif
+
 typedef struct
 {
     vector_float4 position;

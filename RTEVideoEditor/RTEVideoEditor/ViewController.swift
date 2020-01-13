@@ -125,9 +125,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         filterItem.isSelected = !filterItem.isSelected
         
         if filterItem.isSelected {
-            player.add(filter: filterItem.filter)
+            player.add(filterDescriptor: filterItem.descriptor)
         } else {
-            player.remove(filter: filterItem.filter)
+            player.remove(filterDescriptor: filterItem.descriptor)
         }
         
         controlPannel.filterItems[indexPath.row] = filterItem
