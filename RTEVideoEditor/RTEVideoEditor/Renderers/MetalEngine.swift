@@ -9,9 +9,9 @@
 import UIKit
 import AVFoundation
 
-class MetalVideoRenderer {
+class MetalEngine {
     let device: MTLDevice
-    let filterManager: FilterManager
+    let filterGroup: FilterGroup
     var transform: RendererTransform = RendererTransform.init()
     
     private var sampler: MTLSamplerState?
@@ -37,7 +37,7 @@ class MetalVideoRenderer {
         
         self.device = device
         
-        self.filterManager = FilterManager()
+        self.filterGroup = FilterGroup()
         
         self.syncQueue = DispatchQueue(label: "Metal Renderer Sync Queue",
                                        qos: .`default`,
@@ -139,7 +139,7 @@ class MetalVideoRenderer {
     }
 }
 
-extension MetalVideoRenderer: VideoRenderer {
+extension MetalEngine: RendererEngine {
     func processPixelBuffer(_ buffer: CVPixelBuffer, at time: CMTime) {
         syncQueue.sync { [weak self] in
             guard let `self` = self, let textureCache = self.textureCache else { return }
@@ -150,7 +150,7 @@ extension MetalVideoRenderer: VideoRenderer {
                                                    pixelFormat: self.pixelFormat)
             }
         }
-        self.curPixelBuffer = filterManager.render(pixelBuffer: buffer, context: filterContext!)
+        self.curPixelBuffer = filterGroup.render(pixelBuffer: buffer, context: filterContext!)
     }
     
     func presentDrawable(_ drawable: Drawable?) {
@@ -232,10 +232,11 @@ extension MetalVideoRenderer: VideoRenderer {
             self.inFlightSemaphore.signal()
         }
         commandBuffer.commit()
+        self.curPixelBuffer = nil
     }
 }
 
-extension MetalVideoRenderer: VideoTransformDelegate {
+extension MetalEngine: VideoTransformDelegate {
     func rendererDidChangeDrawableSize(_ viewport: CGSize) {
         syncQueue.async {
             self.outputFormatDescription = nil

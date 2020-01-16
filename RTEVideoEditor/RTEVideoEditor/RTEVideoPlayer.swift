@@ -17,7 +17,7 @@ protocol RTEVideoPlayerDelegate: class {
 class RTEVideoPlayer {
     let layer: VideoPlayerLayer
     
-    private let renderer: VideoRenderer?
+    private let metalEngine: RendererEngine?
     private var displayLink: CADisplayLink?
     private var frameProvider: VideoFrameProvider
     weak var delegate: RTEVideoPlayerDelegate?
@@ -34,14 +34,14 @@ class RTEVideoPlayer {
     }
     
     init() {
-        let metalRenderer = MetalVideoRenderer.init()
+        let metalEngine = MetalEngine.init()
         let metalView = MetalView.init(frame: .zero)
         metalView.drawableSizeDidChange = { size in
-            metalRenderer?.transform.drawableSize = size
+            metalEngine?.transform.drawableSize = size
         }
         
         self.layer = metalView
-        self.renderer = metalRenderer
+        self.metalEngine = metalEngine
         self.frameProvider = AVVideoFrameProvider.init()
         
         setupDisplayLink()
@@ -68,14 +68,19 @@ class RTEVideoPlayer {
         frameProvider.replay()
     }
     
-    func add(filterDescriptor: RTEFilterDescriptor) {
-        self.renderer?.filterManager.add(filterDescriptor: filterDescriptor)
-        self.setNeedDisplay()
+    func add(filter: RTEFilterType) {
+        metalEngine?.filterGroup.add(filter: filter)
+        setNeedDisplay()
     }
     
-    func remove(filterDescriptor: RTEFilterDescriptor) {
-        self.renderer?.filterManager.remove(filterDescriptor: filterDescriptor)
-        self.setNeedDisplay()
+    func remove(filter: RTEFilterType) {
+        metalEngine?.filterGroup.remove(filter: filter)
+        setNeedDisplay()
+    }
+    
+    func update(filter: RTEFilterType, params: FilterParams) {
+        metalEngine?.filterGroup.update(filter: filter, params: params)
+        setNeedDisplay()
     }
     
     deinit {
@@ -93,8 +98,8 @@ class RTEVideoPlayer {
             guard let `self` = self else { return }
             switch result {
             case .success(let context):
-                self.renderer?.processPixelBuffer(context.pixelBuffer, at: context.time)
-                self.renderer?.presentDrawable(self.layer.nextDrawable())
+                self.metalEngine?.processPixelBuffer(context.pixelBuffer, at: context.time)
+                self.metalEngine?.presentDrawable(self.layer.nextDrawable())
                 DispatchQueue.main.async {
                     self.delegate?.playerSliderDidChange(self)
                 }

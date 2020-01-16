@@ -9,9 +9,9 @@
 import Foundation
 import AVFoundation
 
-protocol VideoRenderer {
+protocol RendererEngine {
     func processPixelBuffer(_ buffer: CVPixelBuffer, at time: CMTime)
     func presentDrawable(_ drawable: Drawable?)
     
-    var filterManager: FilterManager { get }
+    var filterGroup: FilterGroup { get }
 }

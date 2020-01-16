@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		70068A9223BF4C21002796B6 /* RendererTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70068A9123BF4C21002796B6 /* RendererTransform.swift */; };
 		70068A9623BF4C4B002796B6 /* AAPLMathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 70068A9523BF4C4B002796B6 /* AAPLMathUtilities.m */; };
-		70068A9823C01DC0002796B6 /* VideoRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70068A9723C01DC0002796B6 /* VideoRenderer.swift */; };
+		70068A9823C01DC0002796B6 /* RendererEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70068A9723C01DC0002796B6 /* RendererEngine.swift */; };
 		70068A9A23C01E02002796B6 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70068A9923C01E01002796B6 /* Logger.swift */; };
 		70068A9D23C01E0E002796B6 /* VideoPlayerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70068A9C23C01E0E002796B6 /* VideoPlayerLayer.swift */; };
 		70068A9F23C01E26002796B6 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70068A9E23C01E26002796B6 /* MetalView.swift */; };
 		703D783823C749C500B064FF /* Samplers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D783723C749C500B064FF /* Samplers.swift */; };
+		70498E4823D070F900BD2BAF /* GaussianFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70498E4723D070F900BD2BAF /* GaussianFilter.swift */; };
 		7098B58523C43561007441B9 /* PassThrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = 7098B58323C43561007441B9 /* PassThrough.metal */; };
 		7098B59023C4383B007441B9 /* DownsampleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7098B58F23C4383B007441B9 /* DownsampleFilter.swift */; };
 		7098B5A023C60D35007441B9 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7098B59D23C60D35007441B9 /* UIImage+extension.swift */; };
@@ -31,16 +32,16 @@
 		7098B5DC23C9C107007441B9 /* sutroBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7098B5D523C9C107007441B9 /* sutroBorder.png */; };
 		7098B5DD23C9C107007441B9 /* sutroEdgeBurn.pvr in Resources */ = {isa = PBXBuildFile; fileRef = 7098B5D623C9C107007441B9 /* sutroEdgeBurn.pvr */; };
 		7098B5DF23C9C107007441B9 /* blackOverlayMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 7098B5D823C9C107007441B9 /* blackOverlayMap.png */; };
-		709A7ABE23BF2E6C001704F3 /* RTEFilterDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7ABD23BF2E6C001704F3 /* RTEFilterDescriptor.swift */; };
-		709A7D5723BF4A25001704F3 /* MetalVideoRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7D5623BF4A25001704F3 /* MetalVideoRenderer.swift */; };
+		709A7D5723BF4A25001704F3 /* MetalEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7D5623BF4A25001704F3 /* MetalEngine.swift */; };
 		709A7D5A23BF4AC5001704F3 /* CVPixelBufferPoolUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709A7D5923BF4AC5001704F3 /* CVPixelBufferPoolUtil.swift */; };
 		70B8FD1023CC00A10082F26E /* overlayMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B8FD0C23CC00A10082F26E /* overlayMap.png */; };
 		70B8FD1223CC00A10082F26E /* riseMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B8FD0E23CC00A10082F26E /* riseMap.png */; };
 		70B8FD1323CC00A10082F26E /* blackboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B8FD0F23CC00A10082F26E /* blackboard.png */; };
 		70B8FD1523CC00F30082F26E /* RiseFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 70B8FD1423CC00F30082F26E /* RiseFilter.metal */; };
 		70B8FD1723CC01040082F26E /* RiseFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B8FD1623CC01040082F26E /* RiseFilter.swift */; };
+		70B8FD1B23CDECC40082F26E /* SliderFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B8FD1A23CDECC40082F26E /* SliderFilterCell.swift */; };
 		70BCC3A623C31EF700C68716 /* RenderSharedContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCC3A523C31EF700C68716 /* RenderSharedContext.swift */; };
-		70BCC3A823C3261100C68716 /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCC3A723C3261100C68716 /* FilterManager.swift */; };
+		70BCC3A823C3261100C68716 /* FilterGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCC3A723C3261100C68716 /* FilterGroup.swift */; };
 		70BCC3AB23C33BE300C68716 /* VideoFrameProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCC3AA23C33BE300C68716 /* VideoFrameProvider.swift */; };
 		70BCC3AD23C33BF800C68716 /* AVVideoFrameProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCC3AC23C33BF800C68716 /* AVVideoFrameProvider.swift */; };
 		70BCC3B023C33C2C00C68716 /* cat.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 70BCC3AF23C33C2C00C68716 /* cat.MP4 */; };
@@ -55,6 +56,7 @@
 		70BF411C23CC61C400784A20 /* CanvasFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF411B23CC61C400784A20 /* CanvasFilter.swift */; };
 		70BF411E23CC61E900784A20 /* RTEComputeEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF411D23CC61E900784A20 /* RTEComputeEffect.swift */; };
 		70BF412023CC621A00784A20 /* RTERenderEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF411F23CC621A00784A20 /* RTERenderEffect.swift */; };
+		70BF412423CEBE2300784A20 /* MetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF412323CEBE2300784A20 /* MetalRenderer.swift */; };
 		70E4428923B88C9000039879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E4428823B88C9000039879 /* AppDelegate.swift */; };
 		70E4428B23B88C9000039879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E4428A23B88C9000039879 /* SceneDelegate.swift */; };
 		70E4428D23B88C9000039879 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E4428C23B88C9000039879 /* ViewController.swift */; };
@@ -69,12 +71,13 @@
 		70068A9123BF4C21002796B6 /* RendererTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RendererTransform.swift; sourceTree = "<group>"; };
 		70068A9423BF4C4B002796B6 /* AAPLMathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLMathUtilities.h; sourceTree = "<group>"; };
 		70068A9523BF4C4B002796B6 /* AAPLMathUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLMathUtilities.m; sourceTree = "<group>"; };
-		70068A9723C01DC0002796B6 /* VideoRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoRenderer.swift; sourceTree = "<group>"; };
+		70068A9723C01DC0002796B6 /* RendererEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RendererEngine.swift; sourceTree = "<group>"; };
 		70068A9923C01E01002796B6 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		70068A9C23C01E0E002796B6 /* VideoPlayerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerLayer.swift; sourceTree = "<group>"; };
 		70068A9E23C01E26002796B6 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
 		703D783723C749C500B064FF /* Samplers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Samplers.swift; sourceTree = "<group>"; };
 		703E1E1E23BB5B9F005E4B7B /* RTEVideoEditor-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RTEVideoEditor-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		70498E4723D070F900BD2BAF /* GaussianFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaussianFilter.swift; sourceTree = "<group>"; };
 		7098B58323C43561007441B9 /* PassThrough.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PassThrough.metal; sourceTree = "<group>"; };
 		7098B58F23C4383B007441B9 /* DownsampleFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownsampleFilter.swift; sourceTree = "<group>"; };
 		7098B59D23C60D35007441B9 /* UIImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
@@ -93,16 +96,16 @@
 		7098B5D523C9C107007441B9 /* sutroBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sutroBorder.png; sourceTree = "<group>"; };
 		7098B5D623C9C107007441B9 /* sutroEdgeBurn.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = sutroEdgeBurn.pvr; sourceTree = "<group>"; };
 		7098B5D823C9C107007441B9 /* blackOverlayMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackOverlayMap.png; sourceTree = "<group>"; };
-		709A7ABD23BF2E6C001704F3 /* RTEFilterDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTEFilterDescriptor.swift; sourceTree = "<group>"; };
-		709A7D5623BF4A25001704F3 /* MetalVideoRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalVideoRenderer.swift; sourceTree = "<group>"; };
+		709A7D5623BF4A25001704F3 /* MetalEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalEngine.swift; sourceTree = "<group>"; };
 		709A7D5923BF4AC5001704F3 /* CVPixelBufferPoolUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPixelBufferPoolUtil.swift; sourceTree = "<group>"; };
 		70B8FD0C23CC00A10082F26E /* overlayMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlayMap.png; sourceTree = "<group>"; };
 		70B8FD0E23CC00A10082F26E /* riseMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = riseMap.png; sourceTree = "<group>"; };
 		70B8FD0F23CC00A10082F26E /* blackboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackboard.png; sourceTree = "<group>"; };
 		70B8FD1423CC00F30082F26E /* RiseFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = RiseFilter.metal; sourceTree = "<group>"; };
 		70B8FD1623CC01040082F26E /* RiseFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiseFilter.swift; sourceTree = "<group>"; };
+		70B8FD1A23CDECC40082F26E /* SliderFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderFilterCell.swift; sourceTree = "<group>"; };
 		70BCC3A523C31EF700C68716 /* RenderSharedContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderSharedContext.swift; sourceTree = "<group>"; };
-		70BCC3A723C3261100C68716 /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
+		70BCC3A723C3261100C68716 /* FilterGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterGroup.swift; sourceTree = "<group>"; };
 		70BCC3AA23C33BE300C68716 /* VideoFrameProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFrameProvider.swift; sourceTree = "<group>"; };
 		70BCC3AC23C33BF800C68716 /* AVVideoFrameProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVVideoFrameProvider.swift; sourceTree = "<group>"; };
 		70BCC3AF23C33C2C00C68716 /* cat.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cat.MP4; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 		70BF411B23CC61C400784A20 /* CanvasFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasFilter.swift; sourceTree = "<group>"; };
 		70BF411D23CC61E900784A20 /* RTEComputeEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTEComputeEffect.swift; sourceTree = "<group>"; };
 		70BF411F23CC621A00784A20 /* RTERenderEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTERenderEffect.swift; sourceTree = "<group>"; };
+		70BF412323CEBE2300784A20 /* MetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalRenderer.swift; sourceTree = "<group>"; };
 		70E4428523B88C9000039879 /* RTEVideoEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RTEVideoEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70E4428823B88C9000039879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70E4428A23B88C9000039879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -224,11 +228,11 @@
 				7098B58E23C4383B007441B9 /* Downsample */,
 				7098B58323C43561007441B9 /* PassThrough.metal */,
 				7098B57E23C434B5007441B9 /* Effect */,
-				709A7ABD23BF2E6C001704F3 /* RTEFilterDescriptor.swift */,
 				70BCC3A523C31EF700C68716 /* RenderSharedContext.swift */,
-				70BCC3A723C3261100C68716 /* FilterManager.swift */,
+				70BCC3A723C3261100C68716 /* FilterGroup.swift */,
 				7098B5A923C611BC007441B9 /* RTEFilter.swift */,
 				70BF411B23CC61C400784A20 /* CanvasFilter.swift */,
+				70498E4723D070F900BD2BAF /* GaussianFilter.swift */,
 			);
 			path = Filters;
 			sourceTree = "<group>";
@@ -236,10 +240,11 @@
 		709A7D5523BF4A10001704F3 /* Renderers */ = {
 			isa = PBXGroup;
 			children = (
-				70068A9723C01DC0002796B6 /* VideoRenderer.swift */,
+				70068A9723C01DC0002796B6 /* RendererEngine.swift */,
 				70068A9123BF4C21002796B6 /* RendererTransform.swift */,
-				709A7D5623BF4A25001704F3 /* MetalVideoRenderer.swift */,
+				709A7D5623BF4A25001704F3 /* MetalEngine.swift */,
 				703D783723C749C500B064FF /* Samplers.swift */,
+				70BF412323CEBE2300784A20 /* MetalRenderer.swift */,
 			);
 			path = Renderers;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 				703E1E1E23BB5B9F005E4B7B /* RTEVideoEditor-Bridging-Header.h */,
 				70BCC3B123C36C2500C68716 /* FilterCell.swift */,
 				70BCC3B323C36D3700C68716 /* EditControlPannel.swift */,
+				70B8FD1A23CDECC40082F26E /* SliderFilterCell.swift */,
 			);
 			path = RTEVideoEditor;
 			sourceTree = "<group>";
@@ -490,19 +496,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				709A7D5723BF4A25001704F3 /* MetalVideoRenderer.swift in Sources */,
+				709A7D5723BF4A25001704F3 /* MetalEngine.swift in Sources */,
 				7098B5B723C62481007441B9 /* RosyEffect.metal in Sources */,
 				7098B59023C4383B007441B9 /* DownsampleFilter.swift in Sources */,
+				70B8FD1B23CDECC40082F26E /* SliderFilterCell.swift in Sources */,
 				7098B5A023C60D35007441B9 /* UIImage+extension.swift in Sources */,
 				70BCC3B223C36C2500C68716 /* FilterCell.swift in Sources */,
 				70E4429D23B99FA400039879 /* RTEVideoPlayer.swift in Sources */,
+				70498E4823D070F900BD2BAF /* GaussianFilter.swift in Sources */,
 				70068A9F23C01E26002796B6 /* MetalView.swift in Sources */,
 				7098B5BE23C8B137007441B9 /* CGImage+extension.swift in Sources */,
 				70BCC3AD23C33BF800C68716 /* AVVideoFrameProvider.swift in Sources */,
 				70068A9223BF4C21002796B6 /* RendererTransform.swift in Sources */,
 				70B8FD1523CC00F30082F26E /* RiseFilter.metal in Sources */,
 				7098B5B623C62481007441B9 /* RosyFilter.swift in Sources */,
-				70068A9823C01DC0002796B6 /* VideoRenderer.swift in Sources */,
+				70068A9823C01DC0002796B6 /* RendererEngine.swift in Sources */,
 				70068A9D23C01E0E002796B6 /* VideoPlayerLayer.swift in Sources */,
 				70BF411723CC0EAB00784A20 /* Moon.metal in Sources */,
 				7098B58523C43561007441B9 /* PassThrough.metal in Sources */,
@@ -512,8 +520,8 @@
 				70B8FD1723CC01040082F26E /* RiseFilter.swift in Sources */,
 				70BF411E23CC61E900784A20 /* RTEComputeEffect.swift in Sources */,
 				709A7D5A23BF4AC5001704F3 /* CVPixelBufferPoolUtil.swift in Sources */,
-				709A7ABE23BF2E6C001704F3 /* RTEFilterDescriptor.swift in Sources */,
-				70BCC3A823C3261100C68716 /* FilterManager.swift in Sources */,
+				70BCC3A823C3261100C68716 /* FilterGroup.swift in Sources */,
+				70BF412423CEBE2300784A20 /* MetalRenderer.swift in Sources */,
 				70BF411823CC0EAB00784A20 /* MoonFilter.swift in Sources */,
 				7098B5AA23C611BC007441B9 /* RTEFilter.swift in Sources */,
 				7098B5CF23C95F07007441B9 /* SutroFilter.metal in Sources */,
@@ -684,7 +692,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Free.RTEVideoEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Yipeng_Hao_Wildcard_85HEZ7Y9TR;
+				PROVISIONING_PROFILE_SPECIFIER = YipengHao_Wildcard;
 				SWIFT_OBJC_BRIDGING_HEADER = "RTEVideoEditor-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -707,7 +715,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Free.RTEVideoEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Yipeng_Hao_Wildcard_85HEZ7Y9TR;
+				PROVISIONING_PROFILE_SPECIFIER = YipengHao_Wildcard;
 				SWIFT_OBJC_BRIDGING_HEADER = "RTEVideoEditor-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

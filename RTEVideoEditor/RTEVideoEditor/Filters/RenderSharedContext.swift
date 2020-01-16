@@ -45,8 +45,7 @@ class RenderSharedContext {
             return nil
         }
         
-        if var ciImage = CIImage.init(data: data), let cgImage = coreImageContext.createCGImage(ciImage, from: ciImage.extent) {
-            ciImage = ciImage.oriented(.downMirrored)
+        if let ciImage = CIImage.init(data: data), let cgImage = coreImageContext.createCGImage(ciImage, from: ciImage.extent) {
             
             let descriptor = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: .bgra8Unorm_srgb,
                                                                       width: cgImage.width,
@@ -56,12 +55,11 @@ class RenderSharedContext {
             descriptor.textureType = .type2D
             
             guard let texture = device.makeTexture(descriptor: descriptor) else { return nil }
-            
-            
             let destination = CIRenderDestination.init(mtlTexture: texture, commandBuffer: commandBuffer)
             let colorspace = CGColorSpaceCreateDeviceRGB();
             destination.colorSpace = colorspace
             destination.alphaMode = .premultiplied
+            destination.isFlipped = true
             do {
                 try coreImageContext.startTask(toRender: ciImage, to: destination)
             } catch  {
@@ -93,6 +91,7 @@ class RenderSharedContext {
         let destination = CIRenderDestination.init(mtlTexture: texture, commandBuffer: commandBuffer)
         let colorspace = CGColorSpaceCreateDeviceRGB();
         destination.colorSpace = colorspace
+        destination.isFlipped = true
         destination.alphaMode = .premultiplied
         do {
             try coreImageContext.startTask(toRender: ciImage, to: destination)
@@ -136,4 +135,16 @@ class RenderSharedContext {
         
         return (outputTexture, outputPixelBuffer)
     }
+    
+//    private func newTextureFrom2(image: UIImage) -> MTLTexture? {
+// //https://developer.apple.com/documentation/metal/heaps/image_filter_graph_with_heaps_and_fences
+//        //https://developer.apple.com/documentation/metal/synchronization/image_filter_graph_with_heaps_and_events
+//        guard let cgImage = image.cgImage else { return nil }
+//        var options: [MTKTextureLoader.Option: Any] = [:]
+//        if device.supportsFeatureSet(MTLFeatureSet.iOS_GPUFamily3_v1) {
+//            options[MTKTextureLoader.Option.SRGB] = false
+//        }
+//        
+//        return try? textureLoader.newTexture(cgImage: cgImage, options: options)
+//    }
 }

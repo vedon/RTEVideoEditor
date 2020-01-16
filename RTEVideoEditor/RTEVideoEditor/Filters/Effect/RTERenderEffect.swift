@@ -2,11 +2,11 @@
 //  RTERenderEffect.swift
 //  RTEVideoEditor
 //
-//  Created by weidong fu on 2020/1/13.
+//  Created by weidong fu on 2020/1/12.
 //  Copyright © 2020 Free. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import AVFoundation
 
 class RTERenderEffect: RTEFilter {
@@ -23,6 +23,8 @@ class RTERenderEffect: RTEFilter {
     private(set) var uniformBuffer: MTLBuffer!
     private(set) var vertexBuffer: MTLBuffer!
     private(set) var strengthBuffer: MTLBuffer!
+    
+    //Texture with source images loaded from files
     private var imageSamplerCache: [String: MTLTexture] = [:]
     
     lazy var pipelineDescriptor: MTLRenderPipelineDescriptor? = {

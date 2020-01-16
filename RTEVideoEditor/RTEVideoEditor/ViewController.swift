@@ -29,7 +29,9 @@ class ViewController: UIViewController {
         table.dataSource = self
         table.hideEmptyCells()
         
-        table.register(FilterCell.self, forCellReuseIdentifier: FilterCell.identifier)
+        RTEFilterType.allCases.forEach { (filter) in
+            table.register(filter.cell, forCellReuseIdentifier: filter.cellIdentifier)
+        }
         return table
     }()
     
@@ -42,7 +44,6 @@ class ViewController: UIViewController {
         
         slider.maximumValue = Float(player.duration.value)
         
-        // Do any additional setup after loading the view.
     }
     
     private func setupPlayer() {
@@ -79,7 +80,12 @@ class ViewController: UIViewController {
         tableView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
             make.top.equalTo(slider.snp.bottom)
-            make.bottom.equalToSuperview()
+            if #available(iOS 11.0, *) {
+                make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            } else {
+                // Fallback on earlier versions
+                make.bottom.equalTo(bottomLayoutGuide.snp.bottom)
+            }
         }
         
         view.setNeedsLayout()
@@ -108,15 +114,28 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return controlPannel.filterItems.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let filterItem = controlPannel.filterItems[indexPath.row]
+        return filterItem.type.height
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: FilterCell.identifier, for: indexPath)
+        let filterItem = controlPannel.filterItems[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: filterItem.type.cellIdentifier, for: indexPath)
         cell.selectionStyle = .none
         
-        if let filterCell = cell as? FilterCell {
-            filterCell.setupWith(filterItem: controlPannel.filterItems[indexPath.row])
+        switch cell {
+        case let sliderCell as SliderFilterCell:
+            sliderCell.setupWith(filterItem: filterItem)
+            sliderCell.delegate = self
+            break
+        case let filterCell as FilterCell:
+            filterCell.setupWith(filterItem: filterItem)
+        default: break
         }
-        
+
         return cell
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -125,12 +144,47 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         filterItem.isSelected = !filterItem.isSelected
         
         if filterItem.isSelected {
-            player.add(filterDescriptor: filterItem.descriptor)
+            player.add(filter: filterItem.type)
         } else {
-            player.remove(filterDescriptor: filterItem.descriptor)
+            player.remove(filter: filterItem.type)
         }
         
         controlPannel.filterItems[indexPath.row] = filterItem
         tableView.reloadData()
+    }
+}
+
+extension ViewController: SliderFilterCellDelegate {
+    func sliderCellDidUpdate(_ cell: SliderFilterCell, value: Float, filter: RTEFilterType) {
+        var paramas = CanvasParams.init()
+        paramas.blurProgress = value
+        
+        self.player.update(filter: filter, params: paramas)
+    }
+}
+
+extension RTEFilterType {
+    var cellIdentifier: String {
+        switch self {
+        case .canvas: return "canvas"
+        case .gaussian: return "gaussian"
+        default: return "cell"
+        }
+    }
+    
+    var cell: AnyClass {
+        switch self {
+        case .canvas, .gaussian: return SliderFilterCell.self
+        default: return FilterCell.self
+        }
+    }
+    
+    var height: CGFloat {
+        switch self {
+        case .canvas, .gaussian:
+            return 68
+        default:
+            return 42
+        }
     }
 }

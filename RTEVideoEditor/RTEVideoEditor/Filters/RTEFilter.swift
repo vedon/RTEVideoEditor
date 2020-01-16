@@ -15,7 +15,16 @@ enum RTEFilterType: String, CaseIterable {
     case moon
     case sutro
     case rise
+    case gaussian
     case canvas
+    
+    //The filter with lower priority will be apllied later
+    var priority: Int {
+        switch self {
+        case .canvas: return 0
+        default: return 1
+        }
+    }
 }
 
 protocol FilterParams {

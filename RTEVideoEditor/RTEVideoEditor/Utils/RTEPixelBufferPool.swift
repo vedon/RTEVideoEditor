@@ -2,7 +2,7 @@
 //  RTEPixelBufferPool.swift
 //  RTEVideoEditor
 //
-//  Created by weidong fu on 2020/1/13.
+//  Created by weidong fu on 2020/1/12.
 //  Copyright © 2020 Free. All rights reserved.
 //
 

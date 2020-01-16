@@ -9,26 +9,15 @@
 import UIKit
 
 struct FilterItem {
-    let descriptor: RTEFilterDescriptor
+    let type: RTEFilterType
     var isSelected: Bool = false
 }
 
 extension RTEFilterType {
-    var image: UIImage? {
-        switch self {
-        case .rosy: return nil
-        case .downsample: return nil
-        default: return nil
-        }
-    }
-    
     var isReady: Bool {
         switch self {
-        case .canvas: return false
         default: return true
         }
-        
-        return true
     }
 }
 
@@ -38,6 +27,6 @@ class EditControlPannel {
     init() {
         self.filterItems = RTEFilterType.allCases
                             .filter({ $0.isReady })
-                            .map({ FilterItem(descriptor: RTEFilterDescriptor(type: $0)) })
+                            .map({ FilterItem(type: $0) })
     }
 }
