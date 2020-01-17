@@ -11,5 +11,6 @@
 
 #import "AAPLMathUtilities.h"
 #import "RTEShaderTypes.h"
-
+#import "FFReaderManager.h"
+#import "FFVideoFrame.h"
 #endif /* RTEVideoEditor_Bridging_Header_h */

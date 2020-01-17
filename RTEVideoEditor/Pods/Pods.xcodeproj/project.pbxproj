@@ -3,300 +3,661 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		DEB98CCB7AFF3CF3334E199E438BDD95 /* FFmpeg-Pod */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 46EB2E00000B50 /* Build configuration list for PBXAggregateTarget "FFmpeg-Pod" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = "FFmpeg-Pod";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		035269C50CE979A09D9941762685854C /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2182C787B52B04E99F29853370DD705C /* LayoutConstraint.swift */; };
-		069304B9AB7E84CEA7C88C04369A06E4 /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E10B6680EB13234751293D75F4A471CA /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0AB7CDF6E91149A641B30D27113D1C46 /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909ED09B86A8827AB8A241381D387DC8 /* ConstraintLayoutGuideDSL.swift */; };
-		0B16ABAA80D1F35828304602D46E790B /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B98541DDDED95E0FE8BBD6861806278 /* ConstraintConfig.swift */; };
-		1798B9BB68C945D31DD66ADB729C464D /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E94A31CE3E1380ABEDB6A0997035158 /* ConstraintRelation.swift */; };
-		22529DAC484AA621773C007A64BCD180 /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D4E5FB138C3063C5A103D7AAF1378F /* ConstraintOffsetTarget.swift */; };
-		2624DA9E1F083B41201E770E4ACAB48E /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF819BF1A2B0B16BF61B55FA272EC2B /* ConstraintMultiplierTarget.swift */; };
-		29807B4E99AED7399B646103BF6EB43A /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9DFEE94A1D5B4C087FD5C8E316D27A /* ConstraintConstantTarget.swift */; };
-		2A4C53D844630BB85807170D1149593B /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E2243F6C09A4B7D2511915F87FFD37 /* ConstraintLayoutSupport.swift */; };
-		2C2701988513F7E2C336A74658A10A9A /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CA8CA532F5A6647DDFF8BC3158948 /* Constraint.swift */; };
-		3261EF1AA7ED63FFAB2EBBD698B723CD /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E80861EA56B9687DBEE4E2C6DE1548F /* ConstraintAttributes.swift */; };
-		38E6D800DED51D094C4DC39497801EC6 /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23D3862A4A5C5724EFB04BA876CCE3D /* ConstraintMakerExtendable.swift */; };
-		3F4A38005000AE7714BC51E7684D902B /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDEC97D5C629DF030B28B4DCDBDAB80 /* LayoutConstraintItem.swift */; };
-		3FA5533ED32E720ACC197D63C1AE3B78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		46BD5437A848687DCA489D85A17F0475 /* Pods-RTEVideoEditor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C7C1084AF095848FFBBE7C60D2A5DD53 /* Pods-RTEVideoEditor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4A17C6F8AD6ED26CE617121D4D1B8F01 /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FE3DFFA3208D7FE3125AFD43C0577E /* ConstraintDirectionalInsets.swift */; };
-		4BB9141425EBC87DE5398DB079ED1177 /* Pods-RTEVideoEditor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2E18BCE2DFEC59F3F778E85F73F31 /* Pods-RTEVideoEditor-dummy.m */; };
-		583AA5C62DE6355E02FD732E33C8068D /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8187BFBBF724AA3F3D8043FAD595F72 /* Debugging.swift */; };
-		5C5B7A35C19E038CDDEB1048FE6F3580 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		5E005027ED6B04CF50ED16B7F624BB71 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41F78A959B4A2DCBD099825999BFDDE /* ConstraintView.swift */; };
-		5FB077B8FE28D43E1F87DB7BBE69DEA8 /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D2802EAB11A04BEC282E63A9EA85C6 /* SnapKit-dummy.m */; };
-		65A83DF592CEA4ACBEC8E388BC8CD46D /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E42AAB983FA267C4F5A155C614C9C7 /* ConstraintMakerRelatable.swift */; };
-		80A66BC1D96FEB736444C623456872C3 /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADDB4BDF968CF05C743F99553B1248B /* ConstraintInsets.swift */; };
-		82D3814B6ABB60B572B4587A8434A1CA /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62872D3163DE520B8147A403F729C9A /* ConstraintViewDSL.swift */; };
-		84689D51364FCD8FFEE65C058A422069 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204358CFB47BB5097A5F0E23918EA96 /* Typealiases.swift */; };
-		8542782727A2B034AFE201E9FC72B43C /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E132AB6DA62DA4C0C602D3FFEBA75C /* ConstraintMaker.swift */; };
-		883391613A03A3F77B44FD89581847C9 /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883A709B103628B942FF9B99E615FA40 /* ConstraintPriorityTarget.swift */; };
-		8AF2E9391939882F604690F277261ECD /* ConstraintDirectionalInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAFF367CF2A0017529276B38ADB1831 /* ConstraintDirectionalInsetTarget.swift */; };
-		9D974E6E7047F5FF264A7A56C112E3E1 /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD89C1C7609B531FEDAFAD0C5F139C46 /* ConstraintLayoutGuide.swift */; };
-		A7ECD2AAA3D7A4F58367662B05EFB1EA /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365D4E3958161E79A8A23679A93540F /* ConstraintLayoutGuide+Extensions.swift */; };
-		B2844A86E3CD9C052AC23A8F7F1A8E1B /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58763BD255A4D112B873AF406D04347 /* ConstraintPriority.swift */; };
-		B717FD909397CBA81FD09AA29FA1433E /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1B8C7810E8DA5364BFD3CE11BE6222 /* ConstraintView+Extensions.swift */; };
-		B84983A344F6406C15B4C01058F78908 /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B935D18DE26BA4F02E2D1C511492409 /* ConstraintInsetTarget.swift */; };
-		C8E84246DA279D8D25BA5563A6088A41 /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA6F26A971C380F49C68460CC4B2E6 /* ConstraintMakerPriortizable.swift */; };
-		D06C9E3F6662A1537D672744297F7F81 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6B4B6E2DA3DB3E2B98A1587DB3B261 /* ConstraintDescription.swift */; };
-		D33FDC90CC5449657D858F7D54CE936F /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC0BDA59E35EDADDA1C9593FC9491B4 /* ConstraintDSL.swift */; };
-		DD36F4932E56CD2C3278C6B7E5FE5F71 /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9FFEF3A9EB2F21B9CBCEACB3C224A /* ConstraintMakerFinalizable.swift */; };
-		E8FB046EC90265CA12FF2C611E43E171 /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95867F8C852A9D315DBC470E8342316B /* UILayoutSupport+Extensions.swift */; };
-		EB25DC499A94504CB68F31515ECB1357 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34E33EEF77442690EB123AF6C82ED05 /* ConstraintLayoutSupportDSL.swift */; };
-		F23CC09CB8A283E773FD4A8A69ACD9B5 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10332A234E3D72885B34F22B3CA1A9CE /* ConstraintMakerEditable.swift */; };
-		F378A52479A6A857891F1D350632EE06 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFA26E8DCA3F1B00AA306E435F4D025 /* ConstraintItem.swift */; };
-		F8EECC077B05B01A19DC8AE8871E6F1C /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C539187959BF990751C4D7A8001526 /* ConstraintRelatableTarget.swift */; };
+		46EB2E00000C50 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E00000C40 /* Foundation.framework */; };
+		46EB2E00000C60 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000840 /* Constraint.swift */; };
+		46EB2E00000C70 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000850 /* ConstraintAttributes.swift */; };
+		46EB2E00000C80 /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000860 /* ConstraintConfig.swift */; };
+		46EB2E00000C90 /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000870 /* ConstraintConstantTarget.swift */; };
+		46EB2E00000CA0 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000880 /* ConstraintDescription.swift */; };
+		46EB2E00000CB0 /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000890 /* ConstraintDirectionalInsets.swift */; };
+		46EB2E00000CC0 /* ConstraintDirectionalInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E000008A0 /* ConstraintDirectionalInsetTarget.swift */; };
+		46EB2E00000CD0 /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E000008B0 /* ConstraintDSL.swift */; };
+		46EB2E00000CE0 /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E000008C0 /* ConstraintInsets.swift */; };
+		46EB2E00000CF0 /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E000008D0 /* ConstraintInsetTarget.swift */; };
+		46EB2E00000D00 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E000008E0 /* ConstraintItem.swift */; };
+		46EB2E00000D10 /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E000008F0 /* ConstraintLayoutGuide+Extensions.swift */; };
+		46EB2E00000D20 /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000900 /* ConstraintLayoutGuide.swift */; };
+		46EB2E00000D30 /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000910 /* ConstraintLayoutGuideDSL.swift */; };
+		46EB2E00000D40 /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000920 /* ConstraintLayoutSupport.swift */; };
+		46EB2E00000D50 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000930 /* ConstraintLayoutSupportDSL.swift */; };
+		46EB2E00000D60 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000940 /* ConstraintMaker.swift */; };
+		46EB2E00000D70 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000950 /* ConstraintMakerEditable.swift */; };
+		46EB2E00000D80 /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000960 /* ConstraintMakerExtendable.swift */; };
+		46EB2E00000D90 /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000970 /* ConstraintMakerFinalizable.swift */; };
+		46EB2E00000DA0 /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000980 /* ConstraintMakerPriortizable.swift */; };
+		46EB2E00000DB0 /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000990 /* ConstraintMakerRelatable.swift */; };
+		46EB2E00000DC0 /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E000009A0 /* ConstraintMultiplierTarget.swift */; };
+		46EB2E00000DD0 /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E000009B0 /* ConstraintOffsetTarget.swift */; };
+		46EB2E00000DE0 /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E000009C0 /* ConstraintPriority.swift */; };
+		46EB2E00000DF0 /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E000009D0 /* ConstraintPriorityTarget.swift */; };
+		46EB2E00000E00 /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E000009E0 /* ConstraintRelatableTarget.swift */; };
+		46EB2E00000E10 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E000009F0 /* ConstraintRelation.swift */; };
+		46EB2E00000E20 /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000A00 /* ConstraintView+Extensions.swift */; };
+		46EB2E00000E30 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000A10 /* ConstraintView.swift */; };
+		46EB2E00000E40 /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000A20 /* ConstraintViewDSL.swift */; };
+		46EB2E00000E50 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000A30 /* Debugging.swift */; };
+		46EB2E00000E60 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000A40 /* LayoutConstraint.swift */; };
+		46EB2E00000E70 /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000A50 /* LayoutConstraintItem.swift */; };
+		46EB2E00000E80 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000A60 /* Typealiases.swift */; };
+		46EB2E00000E90 /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000A70 /* UILayoutSupport+Extensions.swift */; };
+		46EB2E00000EE0 /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EB2E00000ED0 /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB2E00000F20 /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00000F10 /* SnapKit-dummy.m */; };
+		46EB2E00000FC0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB2E00000C40 /* Foundation.framework */; };
+		46EB2E00001030 /* Pods-RTEVideoEditor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EB2E00001020 /* Pods-RTEVideoEditor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB2E00001080 /* Pods-RTEVideoEditor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB2E00001070 /* Pods-RTEVideoEditor-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9B650CFAA0F07746B5A448A9C450A1D3 /* PBXContainerItemProxy */ = {
+		46EB2E00001090 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			containerPortal = 46EB2E00000000 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 406313FAAD0BD5A92B75CC564D3F15E4;
+			remoteGlobalIDString = DEB98CCB7AFF3CF3334E199E438BDD95;
+			remoteInfo = "FFmpeg-Pod";
+		};
+		46EB2E000010B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EB2E00000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19622742EBA51E823D6DAE3F8CDBFAD4;
 			remoteInfo = SnapKit;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0204358CFB47BB5097A5F0E23918EA96 /* Typealiases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Typealiases.swift; path = Source/Typealiases.swift; sourceTree = "<group>"; };
-		09C4F97A0D8D72FFFDE088E896B225D4 /* Pods-RTEVideoEditor-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RTEVideoEditor-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0FFA26E8DCA3F1B00AA306E435F4D025 /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
-		10332A234E3D72885B34F22B3CA1A9CE /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerEditable.swift; path = Source/ConstraintMakerEditable.swift; sourceTree = "<group>"; };
-		2182C787B52B04E99F29853370DD705C /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
-		26AA6F26A971C380F49C68460CC4B2E6 /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPriortizable.swift; path = Source/ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
-		3141B5F6B08D20751502011F7718EBA8 /* Pods-RTEVideoEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RTEVideoEditor.debug.xcconfig"; sourceTree = "<group>"; };
-		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		330CA8CA532F5A6647DDFF8BC3158948 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
-		42D2802EAB11A04BEC282E63A9EA85C6 /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
-		4E94A31CE3E1380ABEDB6A0997035158 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
-		52809B2CBE1B1CA4F10A7C59F6D52BA2 /* Pods_RTEVideoEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RTEVideoEditor.framework; path = "Pods-RTEVideoEditor.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B37840CBF2F8918679765EF97B73737 /* Pods-RTEVideoEditor-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RTEVideoEditor-acknowledgements.plist"; sourceTree = "<group>"; };
-		5B98541DDDED95E0FE8BBD6861806278 /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Source/ConstraintConfig.swift; sourceTree = "<group>"; };
-		5EB0042D1125060A75C77111744AC055 /* Pods-RTEVideoEditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RTEVideoEditor.release.xcconfig"; sourceTree = "<group>"; };
-		6365D4E3958161E79A8A23679A93540F /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Source/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
-		6B935D18DE26BA4F02E2D1C511492409 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Source/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
-		6E70462DBEE894BE4AEBA68F5509DF2E /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
-		6E80861EA56B9687DBEE4E2C6DE1548F /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
-		7AC2E18BCE2DFEC59F3F778E85F73F31 /* Pods-RTEVideoEditor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RTEVideoEditor-dummy.m"; sourceTree = "<group>"; };
-		7CD9FFEF3A9EB2F21B9CBCEACB3C224A /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Source/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
-		7CF819BF1A2B0B16BF61B55FA272EC2B /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Source/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
-		81D4E5FB138C3063C5A103D7AAF1378F /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Source/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
-		85E132AB6DA62DA4C0C602D3FFEBA75C /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
-		883A709B103628B942FF9B99E615FA40 /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
-		8CC0BDA59E35EDADDA1C9593FC9491B4 /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Source/ConstraintDSL.swift; sourceTree = "<group>"; };
-		909ED09B86A8827AB8A241381D387DC8 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
-		90C539187959BF990751C4D7A8001526 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
-		95867F8C852A9D315DBC470E8342316B /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Source/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A23D3862A4A5C5724EFB04BA876CCE3D /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
-		A34E33EEF77442690EB123AF6C82ED05 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Source/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
-		A58763BD255A4D112B873AF406D04347 /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Source/ConstraintPriority.swift; sourceTree = "<group>"; };
-		A8187BFBBF724AA3F3D8043FAD595F72 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
-		AAAFF367CF2A0017529276B38ADB1831 /* ConstraintDirectionalInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsetTarget.swift; path = Source/ConstraintDirectionalInsetTarget.swift; sourceTree = "<group>"; };
-		AADDB4BDF968CF05C743F99553B1248B /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Source/ConstraintInsets.swift; sourceTree = "<group>"; };
-		B01FB959633EF5D24C4628FBD0CFA449 /* SnapKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.xcconfig; sourceTree = "<group>"; };
-		B3FE3DFFA3208D7FE3125AFD43C0577E /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsets.swift; path = Source/ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
-		BB6B4B6E2DA3DB3E2B98A1587DB3B261 /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
-		BD89C1C7609B531FEDAFAD0C5F139C46 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Source/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
-		BE9DFEE94A1D5B4C087FD5C8E316D27A /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConstantTarget.swift; path = Source/ConstraintConstantTarget.swift; sourceTree = "<group>"; };
-		C62872D3163DE520B8147A403F729C9A /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Source/ConstraintViewDSL.swift; sourceTree = "<group>"; };
-		C7C1084AF095848FFBBE7C60D2A5DD53 /* Pods-RTEVideoEditor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RTEVideoEditor-umbrella.h"; sourceTree = "<group>"; };
-		CA1B8C7810E8DA5364BFD3CE11BE6222 /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintView+Extensions.swift"; path = "Source/ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
-		D1E42AAB983FA267C4F5A155C614C9C7 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Source/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
-		D41F78A959B4A2DCBD099825999BFDDE /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
-		D522344FCF350CE2C74CA5A271256F08 /* Pods-RTEVideoEditor-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RTEVideoEditor-frameworks.sh"; sourceTree = "<group>"; };
-		D8D19D7008FF20F0ADDA702C19B89C26 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapKit.modulemap; sourceTree = "<group>"; };
-		E10B6680EB13234751293D75F4A471CA /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
-		E1755BE063FE5D1DF20F513D3A01C4AF /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
-		E5A0013850E25A2A3FDF2A2ACD7BD45C /* Pods-RTEVideoEditor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RTEVideoEditor.modulemap"; sourceTree = "<group>"; };
-		ECDEC97D5C629DF030B28B4DCDBDAB80 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
-		F04AC6A567378BEFA111BC9B8D375194 /* Pods-RTEVideoEditor-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RTEVideoEditor-Info.plist"; sourceTree = "<group>"; };
-		F446F969E03F6CB6FAF98832DA3C2C8D /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F5E2243F6C09A4B7D2511915F87FFD37 /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
+		46EB2E000000D0 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		46EB2E000000F0 /* ac3_parser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ac3_parser.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavcodec/ac3_parser.h"; sourceTree = "<group>"; };
+		46EB2E00000100 /* adts_parser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = adts_parser.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavcodec/adts_parser.h"; sourceTree = "<group>"; };
+		46EB2E00000110 /* avcodec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = avcodec.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavcodec/avcodec.h"; sourceTree = "<group>"; };
+		46EB2E00000120 /* avdct.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = avdct.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavcodec/avdct.h"; sourceTree = "<group>"; };
+		46EB2E00000130 /* avfft.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = avfft.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavcodec/avfft.h"; sourceTree = "<group>"; };
+		46EB2E00000140 /* d3d11va.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = d3d11va.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavcodec/d3d11va.h"; sourceTree = "<group>"; };
+		46EB2E00000150 /* dirac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dirac.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavcodec/dirac.h"; sourceTree = "<group>"; };
+		46EB2E00000160 /* dv_profile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dv_profile.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavcodec/dv_profile.h"; sourceTree = "<group>"; };
+		46EB2E00000170 /* dxva2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dxva2.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavcodec/dxva2.h"; sourceTree = "<group>"; };
+		46EB2E00000180 /* jni.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = jni.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavcodec/jni.h"; sourceTree = "<group>"; };
+		46EB2E00000190 /* mediacodec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mediacodec.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavcodec/mediacodec.h"; sourceTree = "<group>"; };
+		46EB2E000001A0 /* qsv.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = qsv.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavcodec/qsv.h"; sourceTree = "<group>"; };
+		46EB2E000001B0 /* vaapi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = vaapi.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavcodec/vaapi.h"; sourceTree = "<group>"; };
+		46EB2E000001C0 /* vdpau.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = vdpau.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavcodec/vdpau.h"; sourceTree = "<group>"; };
+		46EB2E000001D0 /* version.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = version.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavcodec/version.h"; sourceTree = "<group>"; };
+		46EB2E000001E0 /* videotoolbox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = videotoolbox.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavcodec/videotoolbox.h"; sourceTree = "<group>"; };
+		46EB2E000001F0 /* vorbis_parser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = vorbis_parser.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavcodec/vorbis_parser.h"; sourceTree = "<group>"; };
+		46EB2E00000200 /* xvmc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = xvmc.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavcodec/xvmc.h"; sourceTree = "<group>"; };
+		46EB2E00000220 /* avdevice.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = avdevice.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavdevice/avdevice.h"; sourceTree = "<group>"; };
+		46EB2E00000230 /* version.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = version.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavdevice/version.h"; sourceTree = "<group>"; };
+		46EB2E00000250 /* avfilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = avfilter.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavfilter/avfilter.h"; sourceTree = "<group>"; };
+		46EB2E00000260 /* buffersink.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = buffersink.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavfilter/buffersink.h"; sourceTree = "<group>"; };
+		46EB2E00000270 /* buffersrc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = buffersrc.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavfilter/buffersrc.h"; sourceTree = "<group>"; };
+		46EB2E00000280 /* version.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = version.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavfilter/version.h"; sourceTree = "<group>"; };
+		46EB2E000002A0 /* avformat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = avformat.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavformat/avformat.h"; sourceTree = "<group>"; };
+		46EB2E000002B0 /* avio.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = avio.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavformat/avio.h"; sourceTree = "<group>"; };
+		46EB2E000002C0 /* version.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = version.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavformat/version.h"; sourceTree = "<group>"; };
+		46EB2E000002E0 /* adler32.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = adler32.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/adler32.h"; sourceTree = "<group>"; };
+		46EB2E000002F0 /* aes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aes.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/aes.h"; sourceTree = "<group>"; };
+		46EB2E00000300 /* aes_ctr.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aes_ctr.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/aes_ctr.h"; sourceTree = "<group>"; };
+		46EB2E00000310 /* attributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = attributes.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/attributes.h"; sourceTree = "<group>"; };
+		46EB2E00000320 /* audio_fifo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = audio_fifo.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/audio_fifo.h"; sourceTree = "<group>"; };
+		46EB2E00000330 /* avassert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = avassert.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/avassert.h"; sourceTree = "<group>"; };
+		46EB2E00000340 /* avconfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = avconfig.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/avconfig.h"; sourceTree = "<group>"; };
+		46EB2E00000350 /* avstring.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = avstring.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/avstring.h"; sourceTree = "<group>"; };
+		46EB2E00000360 /* avutil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = avutil.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/avutil.h"; sourceTree = "<group>"; };
+		46EB2E00000370 /* base64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = base64.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/base64.h"; sourceTree = "<group>"; };
+		46EB2E00000380 /* blowfish.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = blowfish.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/blowfish.h"; sourceTree = "<group>"; };
+		46EB2E00000390 /* bprint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = bprint.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/bprint.h"; sourceTree = "<group>"; };
+		46EB2E000003A0 /* bswap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = bswap.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/bswap.h"; sourceTree = "<group>"; };
+		46EB2E000003B0 /* buffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = buffer.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/buffer.h"; sourceTree = "<group>"; };
+		46EB2E000003C0 /* camellia.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = camellia.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/camellia.h"; sourceTree = "<group>"; };
+		46EB2E000003D0 /* cast5.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cast5.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/cast5.h"; sourceTree = "<group>"; };
+		46EB2E000003E0 /* channel_layout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = channel_layout.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/channel_layout.h"; sourceTree = "<group>"; };
+		46EB2E000003F0 /* common.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = common.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/common.h"; sourceTree = "<group>"; };
+		46EB2E00000400 /* cpu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cpu.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/cpu.h"; sourceTree = "<group>"; };
+		46EB2E00000410 /* crc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crc.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/crc.h"; sourceTree = "<group>"; };
+		46EB2E00000420 /* des.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = des.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/des.h"; sourceTree = "<group>"; };
+		46EB2E00000430 /* dict.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dict.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/dict.h"; sourceTree = "<group>"; };
+		46EB2E00000440 /* display.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = display.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/display.h"; sourceTree = "<group>"; };
+		46EB2E00000450 /* downmix_info.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = downmix_info.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/downmix_info.h"; sourceTree = "<group>"; };
+		46EB2E00000460 /* encryption_info.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = encryption_info.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/encryption_info.h"; sourceTree = "<group>"; };
+		46EB2E00000470 /* error.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = error.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/error.h"; sourceTree = "<group>"; };
+		46EB2E00000480 /* eval.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = eval.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/eval.h"; sourceTree = "<group>"; };
+		46EB2E00000490 /* ffversion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ffversion.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/ffversion.h"; sourceTree = "<group>"; };
+		46EB2E000004A0 /* fifo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = fifo.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/fifo.h"; sourceTree = "<group>"; };
+		46EB2E000004B0 /* file.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = file.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/file.h"; sourceTree = "<group>"; };
+		46EB2E000004C0 /* frame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = frame.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/frame.h"; sourceTree = "<group>"; };
+		46EB2E000004D0 /* hash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hash.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/hash.h"; sourceTree = "<group>"; };
+		46EB2E000004E0 /* hmac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hmac.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/hmac.h"; sourceTree = "<group>"; };
+		46EB2E000004F0 /* hwcontext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hwcontext.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/hwcontext.h"; sourceTree = "<group>"; };
+		46EB2E00000500 /* hwcontext_cuda.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hwcontext_cuda.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/hwcontext_cuda.h"; sourceTree = "<group>"; };
+		46EB2E00000510 /* hwcontext_d3d11va.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hwcontext_d3d11va.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/hwcontext_d3d11va.h"; sourceTree = "<group>"; };
+		46EB2E00000520 /* hwcontext_drm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hwcontext_drm.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/hwcontext_drm.h"; sourceTree = "<group>"; };
+		46EB2E00000530 /* hwcontext_dxva2.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hwcontext_dxva2.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/hwcontext_dxva2.h"; sourceTree = "<group>"; };
+		46EB2E00000540 /* hwcontext_mediacodec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hwcontext_mediacodec.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/hwcontext_mediacodec.h"; sourceTree = "<group>"; };
+		46EB2E00000550 /* hwcontext_qsv.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hwcontext_qsv.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/hwcontext_qsv.h"; sourceTree = "<group>"; };
+		46EB2E00000560 /* hwcontext_vaapi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hwcontext_vaapi.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/hwcontext_vaapi.h"; sourceTree = "<group>"; };
+		46EB2E00000570 /* hwcontext_vdpau.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hwcontext_vdpau.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/hwcontext_vdpau.h"; sourceTree = "<group>"; };
+		46EB2E00000580 /* hwcontext_videotoolbox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hwcontext_videotoolbox.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/hwcontext_videotoolbox.h"; sourceTree = "<group>"; };
+		46EB2E00000590 /* imgutils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = imgutils.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/imgutils.h"; sourceTree = "<group>"; };
+		46EB2E000005A0 /* intfloat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = intfloat.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/intfloat.h"; sourceTree = "<group>"; };
+		46EB2E000005B0 /* intreadwrite.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = intreadwrite.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/intreadwrite.h"; sourceTree = "<group>"; };
+		46EB2E000005C0 /* lfg.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = lfg.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/lfg.h"; sourceTree = "<group>"; };
+		46EB2E000005D0 /* log.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = log.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/log.h"; sourceTree = "<group>"; };
+		46EB2E000005E0 /* lzo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = lzo.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/lzo.h"; sourceTree = "<group>"; };
+		46EB2E000005F0 /* macros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = macros.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/macros.h"; sourceTree = "<group>"; };
+		46EB2E00000600 /* mastering_display_metadata.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mastering_display_metadata.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/mastering_display_metadata.h"; sourceTree = "<group>"; };
+		46EB2E00000610 /* mathematics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mathematics.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/mathematics.h"; sourceTree = "<group>"; };
+		46EB2E00000620 /* md5.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = md5.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/md5.h"; sourceTree = "<group>"; };
+		46EB2E00000630 /* mem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mem.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/mem.h"; sourceTree = "<group>"; };
+		46EB2E00000640 /* motion_vector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = motion_vector.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/motion_vector.h"; sourceTree = "<group>"; };
+		46EB2E00000650 /* murmur3.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = murmur3.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/murmur3.h"; sourceTree = "<group>"; };
+		46EB2E00000660 /* opt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = opt.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/opt.h"; sourceTree = "<group>"; };
+		46EB2E00000670 /* parseutils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = parseutils.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/parseutils.h"; sourceTree = "<group>"; };
+		46EB2E00000680 /* pixdesc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pixdesc.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/pixdesc.h"; sourceTree = "<group>"; };
+		46EB2E00000690 /* pixelutils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pixelutils.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/pixelutils.h"; sourceTree = "<group>"; };
+		46EB2E000006A0 /* pixfmt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pixfmt.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/pixfmt.h"; sourceTree = "<group>"; };
+		46EB2E000006B0 /* random_seed.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = random_seed.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/random_seed.h"; sourceTree = "<group>"; };
+		46EB2E000006C0 /* rational.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rational.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/rational.h"; sourceTree = "<group>"; };
+		46EB2E000006D0 /* rc4.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = rc4.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/rc4.h"; sourceTree = "<group>"; };
+		46EB2E000006E0 /* replaygain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = replaygain.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/replaygain.h"; sourceTree = "<group>"; };
+		46EB2E000006F0 /* ripemd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ripemd.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/ripemd.h"; sourceTree = "<group>"; };
+		46EB2E00000700 /* samplefmt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = samplefmt.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/samplefmt.h"; sourceTree = "<group>"; };
+		46EB2E00000710 /* sha.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sha.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/sha.h"; sourceTree = "<group>"; };
+		46EB2E00000720 /* sha512.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sha512.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/sha512.h"; sourceTree = "<group>"; };
+		46EB2E00000730 /* spherical.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = spherical.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/spherical.h"; sourceTree = "<group>"; };
+		46EB2E00000740 /* stereo3d.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = stereo3d.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/stereo3d.h"; sourceTree = "<group>"; };
+		46EB2E00000750 /* tea.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = tea.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/tea.h"; sourceTree = "<group>"; };
+		46EB2E00000760 /* threadmessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = threadmessage.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/threadmessage.h"; sourceTree = "<group>"; };
+		46EB2E00000770 /* time.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = time.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/time.h"; sourceTree = "<group>"; };
+		46EB2E00000780 /* timecode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = timecode.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/timecode.h"; sourceTree = "<group>"; };
+		46EB2E00000790 /* timestamp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = timestamp.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/timestamp.h"; sourceTree = "<group>"; };
+		46EB2E000007A0 /* tree.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = tree.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/tree.h"; sourceTree = "<group>"; };
+		46EB2E000007B0 /* twofish.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = twofish.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/twofish.h"; sourceTree = "<group>"; };
+		46EB2E000007C0 /* version.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = version.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/version.h"; sourceTree = "<group>"; };
+		46EB2E000007D0 /* xtea.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = xtea.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/xtea.h"; sourceTree = "<group>"; };
+		46EB2E000007F0 /* swresample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = swresample.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libswresample/swresample.h"; sourceTree = "<group>"; };
+		46EB2E00000800 /* version.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = version.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libswresample/version.h"; sourceTree = "<group>"; };
+		46EB2E00000820 /* swscale.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = swscale.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libswscale/swscale.h"; sourceTree = "<group>"; };
+		46EB2E00000830 /* version.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = version.h; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libswscale/version.h"; sourceTree = "<group>"; };
+		46EB2E00000840 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
+		46EB2E00000850 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
+		46EB2E00000860 /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Source/ConstraintConfig.swift; sourceTree = "<group>"; };
+		46EB2E00000870 /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConstantTarget.swift; path = Source/ConstraintConstantTarget.swift; sourceTree = "<group>"; };
+		46EB2E00000880 /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
+		46EB2E00000890 /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsets.swift; path = Source/ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
+		46EB2E000008A0 /* ConstraintDirectionalInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsetTarget.swift; path = Source/ConstraintDirectionalInsetTarget.swift; sourceTree = "<group>"; };
+		46EB2E000008B0 /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Source/ConstraintDSL.swift; sourceTree = "<group>"; };
+		46EB2E000008C0 /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Source/ConstraintInsets.swift; sourceTree = "<group>"; };
+		46EB2E000008D0 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Source/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
+		46EB2E000008E0 /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
+		46EB2E000008F0 /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Source/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
+		46EB2E00000900 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Source/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
+		46EB2E00000910 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
+		46EB2E00000920 /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
+		46EB2E00000930 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Source/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
+		46EB2E00000940 /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
+		46EB2E00000950 /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerEditable.swift; path = Source/ConstraintMakerEditable.swift; sourceTree = "<group>"; };
+		46EB2E00000960 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
+		46EB2E00000970 /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Source/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
+		46EB2E00000980 /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPriortizable.swift; path = Source/ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
+		46EB2E00000990 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Source/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
+		46EB2E000009A0 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Source/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
+		46EB2E000009B0 /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Source/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
+		46EB2E000009C0 /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Source/ConstraintPriority.swift; sourceTree = "<group>"; };
+		46EB2E000009D0 /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
+		46EB2E000009E0 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
+		46EB2E000009F0 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
+		46EB2E00000A00 /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintView+Extensions.swift"; path = "Source/ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
+		46EB2E00000A10 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
+		46EB2E00000A20 /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Source/ConstraintViewDSL.swift; sourceTree = "<group>"; };
+		46EB2E00000A30 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
+		46EB2E00000A40 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
+		46EB2E00000A50 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
+		46EB2E00000A60 /* Typealiases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Typealiases.swift; path = Source/Typealiases.swift; sourceTree = "<group>"; };
+		46EB2E00000A70 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Source/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
+		46EB2E00000A90 /* libavcodec.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libavcodec.a; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/lib/libavcodec.a"; sourceTree = "<group>"; };
+		46EB2E00000AA0 /* libavdevice.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libavdevice.a; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/lib/libavdevice.a"; sourceTree = "<group>"; };
+		46EB2E00000AB0 /* libavfilter.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libavfilter.a; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/lib/libavfilter.a"; sourceTree = "<group>"; };
+		46EB2E00000AC0 /* libavformat.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libavformat.a; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/lib/libavformat.a"; sourceTree = "<group>"; };
+		46EB2E00000AD0 /* libavutil.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libavutil.a; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/lib/libavutil.a"; sourceTree = "<group>"; };
+		46EB2E00000AE0 /* libswresample.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libswresample.a; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/lib/libswresample.a"; sourceTree = "<group>"; };
+		46EB2E00000AF0 /* libswscale.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libswscale.a; path = "FFmpeg-Pod/Classes/FFmpeg-iOS/lib/libswscale.a"; sourceTree = "<group>"; };
+		46EB2E00000B10 /* FFmpeg-Pod.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "FFmpeg-Pod.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		46EB2E00000B20 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		46EB2E00000B30 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		46EB2E00000B90 /* FFmpeg-Pod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "FFmpeg-Pod.xcconfig"; sourceTree = "<group>"; };
+		46EB2E00000C40 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		46EB2E00000EB0 /* SnapKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.xcconfig; sourceTree = "<group>"; };
+		46EB2E00000EC0 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapKit.modulemap; sourceTree = "<group>"; };
+		46EB2E00000ED0 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
+		46EB2E00000EF0 /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
+		46EB2E00000F00 /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
+		46EB2E00000F10 /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
+		46EB2E00000FE0 /* Pods-RTEVideoEditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RTEVideoEditor.release.xcconfig"; sourceTree = "<group>"; };
+		46EB2E00000FF0 /* Pods-RTEVideoEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RTEVideoEditor.debug.xcconfig"; sourceTree = "<group>"; };
+		46EB2E00001000 /* Pods-RTEVideoEditor-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RTEVideoEditor-Info.plist"; sourceTree = "<group>"; };
+		46EB2E00001010 /* Pods-RTEVideoEditor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RTEVideoEditor.modulemap"; sourceTree = "<group>"; };
+		46EB2E00001020 /* Pods-RTEVideoEditor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RTEVideoEditor-umbrella.h"; sourceTree = "<group>"; };
+		46EB2E00001040 /* Pods-RTEVideoEditor-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RTEVideoEditor-frameworks.sh"; sourceTree = "<group>"; };
+		46EB2E00001050 /* Pods-RTEVideoEditor-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RTEVideoEditor-acknowledgements.plist"; sourceTree = "<group>"; };
+		46EB2E00001060 /* Pods-RTEVideoEditor-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RTEVideoEditor-acknowledgements.markdown"; sourceTree = "<group>"; };
+		46EB2E00001070 /* Pods-RTEVideoEditor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RTEVideoEditor-dummy.m"; sourceTree = "<group>"; };
+		979486118B3E90C08386079D57962701 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A003870D4F316EC7565E402C6355FD50 /* Pods_RTEVideoEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RTEVideoEditor.framework; path = "Pods-RTEVideoEditor.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4E295DC4D8DDD971D22944324D1E5CC7 /* Frameworks */ = {
+		46EB2E00000C10 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C5B7A35C19E038CDDEB1048FE6F3580 /* Foundation.framework in Frameworks */,
+				46EB2E00000C50 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FEECE8DEA86E7B64FF2CE4E81F2A8F9F /* Frameworks */ = {
+		46EB2E00000FA0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FA5533ED32E720ACC197D63C1AE3B78 /* Foundation.framework in Frameworks */,
+				46EB2E00000FC0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		11F5A53A1414698FC332BED87B99C408 /* Support Files */ = {
+		46EB2E00000010 = {
 			isa = PBXGroup;
 			children = (
-				D8D19D7008FF20F0ADDA702C19B89C26 /* SnapKit.modulemap */,
-				B01FB959633EF5D24C4628FBD0CFA449 /* SnapKit.xcconfig */,
-				42D2802EAB11A04BEC282E63A9EA85C6 /* SnapKit-dummy.m */,
-				6E70462DBEE894BE4AEBA68F5509DF2E /* SnapKit-Info.plist */,
-				E1755BE063FE5D1DF20F513D3A01C4AF /* SnapKit-prefix.pch */,
-				E10B6680EB13234751293D75F4A471CA /* SnapKit-umbrella.h */,
+				46EB2E000000D0 /* Podfile */,
+				46EB2E00000090 /* Development Pods */,
+				46EB2E00000060 /* Frameworks */,
+				46EB2E00000080 /* Pods */,
+				46EB2E00000020 /* Products */,
+				46EB2E00000070 /* Targets Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SnapKit";
 			sourceTree = "<group>";
 		};
-		2707BF8B772711375C83872B05811C09 /* Pods-RTEVideoEditor */ = {
+		46EB2E00000020 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E5A0013850E25A2A3FDF2A2ACD7BD45C /* Pods-RTEVideoEditor.modulemap */,
-				09C4F97A0D8D72FFFDE088E896B225D4 /* Pods-RTEVideoEditor-acknowledgements.markdown */,
-				5B37840CBF2F8918679765EF97B73737 /* Pods-RTEVideoEditor-acknowledgements.plist */,
-				7AC2E18BCE2DFEC59F3F778E85F73F31 /* Pods-RTEVideoEditor-dummy.m */,
-				D522344FCF350CE2C74CA5A271256F08 /* Pods-RTEVideoEditor-frameworks.sh */,
-				F04AC6A567378BEFA111BC9B8D375194 /* Pods-RTEVideoEditor-Info.plist */,
-				C7C1084AF095848FFBBE7C60D2A5DD53 /* Pods-RTEVideoEditor-umbrella.h */,
-				3141B5F6B08D20751502011F7718EBA8 /* Pods-RTEVideoEditor.debug.xcconfig */,
-				5EB0042D1125060A75C77111744AC055 /* Pods-RTEVideoEditor.release.xcconfig */,
+				A003870D4F316EC7565E402C6355FD50 /* Pods_RTEVideoEditor.framework */,
+				979486118B3E90C08386079D57962701 /* SnapKit.framework */,
 			);
-			name = "Pods-RTEVideoEditor";
-			path = "Target Support Files/Pods-RTEVideoEditor";
+			name = Products;
 			sourceTree = "<group>";
 		};
-		546768CB3EB1B7EB3E4A1FBEE468A890 /* SnapKit */ = {
+		46EB2E00000060 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				330CA8CA532F5A6647DDFF8BC3158948 /* Constraint.swift */,
-				6E80861EA56B9687DBEE4E2C6DE1548F /* ConstraintAttributes.swift */,
-				5B98541DDDED95E0FE8BBD6861806278 /* ConstraintConfig.swift */,
-				BE9DFEE94A1D5B4C087FD5C8E316D27A /* ConstraintConstantTarget.swift */,
-				BB6B4B6E2DA3DB3E2B98A1587DB3B261 /* ConstraintDescription.swift */,
-				B3FE3DFFA3208D7FE3125AFD43C0577E /* ConstraintDirectionalInsets.swift */,
-				AAAFF367CF2A0017529276B38ADB1831 /* ConstraintDirectionalInsetTarget.swift */,
-				8CC0BDA59E35EDADDA1C9593FC9491B4 /* ConstraintDSL.swift */,
-				AADDB4BDF968CF05C743F99553B1248B /* ConstraintInsets.swift */,
-				6B935D18DE26BA4F02E2D1C511492409 /* ConstraintInsetTarget.swift */,
-				0FFA26E8DCA3F1B00AA306E435F4D025 /* ConstraintItem.swift */,
-				BD89C1C7609B531FEDAFAD0C5F139C46 /* ConstraintLayoutGuide.swift */,
-				6365D4E3958161E79A8A23679A93540F /* ConstraintLayoutGuide+Extensions.swift */,
-				909ED09B86A8827AB8A241381D387DC8 /* ConstraintLayoutGuideDSL.swift */,
-				F5E2243F6C09A4B7D2511915F87FFD37 /* ConstraintLayoutSupport.swift */,
-				A34E33EEF77442690EB123AF6C82ED05 /* ConstraintLayoutSupportDSL.swift */,
-				85E132AB6DA62DA4C0C602D3FFEBA75C /* ConstraintMaker.swift */,
-				10332A234E3D72885B34F22B3CA1A9CE /* ConstraintMakerEditable.swift */,
-				A23D3862A4A5C5724EFB04BA876CCE3D /* ConstraintMakerExtendable.swift */,
-				7CD9FFEF3A9EB2F21B9CBCEACB3C224A /* ConstraintMakerFinalizable.swift */,
-				26AA6F26A971C380F49C68460CC4B2E6 /* ConstraintMakerPriortizable.swift */,
-				D1E42AAB983FA267C4F5A155C614C9C7 /* ConstraintMakerRelatable.swift */,
-				7CF819BF1A2B0B16BF61B55FA272EC2B /* ConstraintMultiplierTarget.swift */,
-				81D4E5FB138C3063C5A103D7AAF1378F /* ConstraintOffsetTarget.swift */,
-				A58763BD255A4D112B873AF406D04347 /* ConstraintPriority.swift */,
-				883A709B103628B942FF9B99E615FA40 /* ConstraintPriorityTarget.swift */,
-				90C539187959BF990751C4D7A8001526 /* ConstraintRelatableTarget.swift */,
-				4E94A31CE3E1380ABEDB6A0997035158 /* ConstraintRelation.swift */,
-				D41F78A959B4A2DCBD099825999BFDDE /* ConstraintView.swift */,
-				CA1B8C7810E8DA5364BFD3CE11BE6222 /* ConstraintView+Extensions.swift */,
-				C62872D3163DE520B8147A403F729C9A /* ConstraintViewDSL.swift */,
-				A8187BFBBF724AA3F3D8043FAD595F72 /* Debugging.swift */,
-				2182C787B52B04E99F29853370DD705C /* LayoutConstraint.swift */,
-				ECDEC97D5C629DF030B28B4DCDBDAB80 /* LayoutConstraintItem.swift */,
-				0204358CFB47BB5097A5F0E23918EA96 /* Typealiases.swift */,
-				95867F8C852A9D315DBC470E8342316B /* UILayoutSupport+Extensions.swift */,
-				11F5A53A1414698FC332BED87B99C408 /* Support Files */,
+				46EB2E00000C30 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		46EB2E00000070 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				46EB2E00000FD0 /* Pods-RTEVideoEditor */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		46EB2E00000080 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46EB2E000000C0 /* SnapKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		46EB2E00000090 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46EB2E000000B0 /* FFmpeg-Pod */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		46EB2E000000B0 /* FFmpeg-Pod */ = {
+			isa = PBXGroup;
+			children = (
+				46EB2E00000A80 /* Frameworks */,
+				46EB2E000000E0 /* libavcodec */,
+				46EB2E00000210 /* libavdevice */,
+				46EB2E00000240 /* libavfilter */,
+				46EB2E00000290 /* libavformat */,
+				46EB2E000002D0 /* libavutil */,
+				46EB2E000007E0 /* libswresample */,
+				46EB2E00000810 /* libswscale */,
+				46EB2E00000B00 /* Pod */,
+				46EB2E00000B80 /* Support Files */,
+			);
+			name = "FFmpeg-Pod";
+			path = "../FFmpeg-Pod";
+			sourceTree = "<group>";
+		};
+		46EB2E000000C0 /* SnapKit */ = {
+			isa = PBXGroup;
+			children = (
+				46EB2E00000840 /* Constraint.swift */,
+				46EB2E00000850 /* ConstraintAttributes.swift */,
+				46EB2E00000860 /* ConstraintConfig.swift */,
+				46EB2E00000870 /* ConstraintConstantTarget.swift */,
+				46EB2E00000880 /* ConstraintDescription.swift */,
+				46EB2E00000890 /* ConstraintDirectionalInsets.swift */,
+				46EB2E000008A0 /* ConstraintDirectionalInsetTarget.swift */,
+				46EB2E000008B0 /* ConstraintDSL.swift */,
+				46EB2E000008C0 /* ConstraintInsets.swift */,
+				46EB2E000008D0 /* ConstraintInsetTarget.swift */,
+				46EB2E000008E0 /* ConstraintItem.swift */,
+				46EB2E00000900 /* ConstraintLayoutGuide.swift */,
+				46EB2E000008F0 /* ConstraintLayoutGuide+Extensions.swift */,
+				46EB2E00000910 /* ConstraintLayoutGuideDSL.swift */,
+				46EB2E00000920 /* ConstraintLayoutSupport.swift */,
+				46EB2E00000930 /* ConstraintLayoutSupportDSL.swift */,
+				46EB2E00000940 /* ConstraintMaker.swift */,
+				46EB2E00000950 /* ConstraintMakerEditable.swift */,
+				46EB2E00000960 /* ConstraintMakerExtendable.swift */,
+				46EB2E00000970 /* ConstraintMakerFinalizable.swift */,
+				46EB2E00000980 /* ConstraintMakerPriortizable.swift */,
+				46EB2E00000990 /* ConstraintMakerRelatable.swift */,
+				46EB2E000009A0 /* ConstraintMultiplierTarget.swift */,
+				46EB2E000009B0 /* ConstraintOffsetTarget.swift */,
+				46EB2E000009C0 /* ConstraintPriority.swift */,
+				46EB2E000009D0 /* ConstraintPriorityTarget.swift */,
+				46EB2E000009E0 /* ConstraintRelatableTarget.swift */,
+				46EB2E000009F0 /* ConstraintRelation.swift */,
+				46EB2E00000A10 /* ConstraintView.swift */,
+				46EB2E00000A00 /* ConstraintView+Extensions.swift */,
+				46EB2E00000A20 /* ConstraintViewDSL.swift */,
+				46EB2E00000A30 /* Debugging.swift */,
+				46EB2E00000A40 /* LayoutConstraint.swift */,
+				46EB2E00000A50 /* LayoutConstraintItem.swift */,
+				46EB2E00000A60 /* Typealiases.swift */,
+				46EB2E00000A70 /* UILayoutSupport+Extensions.swift */,
+				46EB2E00000EA0 /* Support Files */,
 			);
 			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
-		853B1AB31B79C4480E6E1B1D2115A941 /* Products */ = {
+		46EB2E000000E0 /* libavcodec */ = {
 			isa = PBXGroup;
 			children = (
-				52809B2CBE1B1CA4F10A7C59F6D52BA2 /* Pods_RTEVideoEditor.framework */,
-				F446F969E03F6CB6FAF98832DA3C2C8D /* SnapKit.framework */,
+				46EB2E000000F0 /* ac3_parser.h */,
+				46EB2E00000100 /* adts_parser.h */,
+				46EB2E00000110 /* avcodec.h */,
+				46EB2E00000120 /* avdct.h */,
+				46EB2E00000130 /* avfft.h */,
+				46EB2E00000140 /* d3d11va.h */,
+				46EB2E00000150 /* dirac.h */,
+				46EB2E00000160 /* dv_profile.h */,
+				46EB2E00000170 /* dxva2.h */,
+				46EB2E00000180 /* jni.h */,
+				46EB2E00000190 /* mediacodec.h */,
+				46EB2E000001A0 /* qsv.h */,
+				46EB2E000001B0 /* vaapi.h */,
+				46EB2E000001C0 /* vdpau.h */,
+				46EB2E000001D0 /* version.h */,
+				46EB2E000001E0 /* videotoolbox.h */,
+				46EB2E000001F0 /* vorbis_parser.h */,
+				46EB2E00000200 /* xvmc.h */,
 			);
-			name = Products;
+			name = libavcodec;
 			sourceTree = "<group>";
 		};
-		BA22F08D059965C9A09F78196176CEDB /* Pods */ = {
+		46EB2E00000210 /* libavdevice */ = {
 			isa = PBXGroup;
 			children = (
-				546768CB3EB1B7EB3E4A1FBEE468A890 /* SnapKit */,
+				46EB2E00000220 /* avdevice.h */,
+				46EB2E00000230 /* version.h */,
 			);
-			name = Pods;
+			name = libavdevice;
 			sourceTree = "<group>";
 		};
-		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+		46EB2E00000240 /* libavfilter */ = {
 			isa = PBXGroup;
 			children = (
-				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+				46EB2E00000250 /* avfilter.h */,
+				46EB2E00000260 /* buffersink.h */,
+				46EB2E00000270 /* buffersrc.h */,
+				46EB2E00000280 /* version.h */,
 			);
-			name = iOS;
+			name = libavfilter;
 			sourceTree = "<group>";
 		};
-		CF1408CF629C7361332E53B88F7BD30C = {
+		46EB2E00000290 /* libavformat */ = {
 			isa = PBXGroup;
 			children = (
-				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				BA22F08D059965C9A09F78196176CEDB /* Pods */,
-				853B1AB31B79C4480E6E1B1D2115A941 /* Products */,
-				D399A2CF59637904C165068200FEFA77 /* Targets Support Files */,
+				46EB2E000002A0 /* avformat.h */,
+				46EB2E000002B0 /* avio.h */,
+				46EB2E000002C0 /* version.h */,
 			);
+			name = libavformat;
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		46EB2E000002D0 /* libavutil */ = {
 			isa = PBXGroup;
 			children = (
-				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+				46EB2E000002E0 /* adler32.h */,
+				46EB2E000002F0 /* aes.h */,
+				46EB2E00000300 /* aes_ctr.h */,
+				46EB2E00000310 /* attributes.h */,
+				46EB2E00000320 /* audio_fifo.h */,
+				46EB2E00000330 /* avassert.h */,
+				46EB2E00000340 /* avconfig.h */,
+				46EB2E00000350 /* avstring.h */,
+				46EB2E00000360 /* avutil.h */,
+				46EB2E00000370 /* base64.h */,
+				46EB2E00000380 /* blowfish.h */,
+				46EB2E00000390 /* bprint.h */,
+				46EB2E000003A0 /* bswap.h */,
+				46EB2E000003B0 /* buffer.h */,
+				46EB2E000003C0 /* camellia.h */,
+				46EB2E000003D0 /* cast5.h */,
+				46EB2E000003E0 /* channel_layout.h */,
+				46EB2E000003F0 /* common.h */,
+				46EB2E00000400 /* cpu.h */,
+				46EB2E00000410 /* crc.h */,
+				46EB2E00000420 /* des.h */,
+				46EB2E00000430 /* dict.h */,
+				46EB2E00000440 /* display.h */,
+				46EB2E00000450 /* downmix_info.h */,
+				46EB2E00000460 /* encryption_info.h */,
+				46EB2E00000470 /* error.h */,
+				46EB2E00000480 /* eval.h */,
+				46EB2E00000490 /* ffversion.h */,
+				46EB2E000004A0 /* fifo.h */,
+				46EB2E000004B0 /* file.h */,
+				46EB2E000004C0 /* frame.h */,
+				46EB2E000004D0 /* hash.h */,
+				46EB2E000004E0 /* hmac.h */,
+				46EB2E000004F0 /* hwcontext.h */,
+				46EB2E00000500 /* hwcontext_cuda.h */,
+				46EB2E00000510 /* hwcontext_d3d11va.h */,
+				46EB2E00000520 /* hwcontext_drm.h */,
+				46EB2E00000530 /* hwcontext_dxva2.h */,
+				46EB2E00000540 /* hwcontext_mediacodec.h */,
+				46EB2E00000550 /* hwcontext_qsv.h */,
+				46EB2E00000560 /* hwcontext_vaapi.h */,
+				46EB2E00000570 /* hwcontext_vdpau.h */,
+				46EB2E00000580 /* hwcontext_videotoolbox.h */,
+				46EB2E00000590 /* imgutils.h */,
+				46EB2E000005A0 /* intfloat.h */,
+				46EB2E000005B0 /* intreadwrite.h */,
+				46EB2E000005C0 /* lfg.h */,
+				46EB2E000005D0 /* log.h */,
+				46EB2E000005E0 /* lzo.h */,
+				46EB2E000005F0 /* macros.h */,
+				46EB2E00000600 /* mastering_display_metadata.h */,
+				46EB2E00000610 /* mathematics.h */,
+				46EB2E00000620 /* md5.h */,
+				46EB2E00000630 /* mem.h */,
+				46EB2E00000640 /* motion_vector.h */,
+				46EB2E00000650 /* murmur3.h */,
+				46EB2E00000660 /* opt.h */,
+				46EB2E00000670 /* parseutils.h */,
+				46EB2E00000680 /* pixdesc.h */,
+				46EB2E00000690 /* pixelutils.h */,
+				46EB2E000006A0 /* pixfmt.h */,
+				46EB2E000006B0 /* random_seed.h */,
+				46EB2E000006C0 /* rational.h */,
+				46EB2E000006D0 /* rc4.h */,
+				46EB2E000006E0 /* replaygain.h */,
+				46EB2E000006F0 /* ripemd.h */,
+				46EB2E00000700 /* samplefmt.h */,
+				46EB2E00000710 /* sha.h */,
+				46EB2E00000720 /* sha512.h */,
+				46EB2E00000730 /* spherical.h */,
+				46EB2E00000740 /* stereo3d.h */,
+				46EB2E00000750 /* tea.h */,
+				46EB2E00000760 /* threadmessage.h */,
+				46EB2E00000770 /* time.h */,
+				46EB2E00000780 /* timecode.h */,
+				46EB2E00000790 /* timestamp.h */,
+				46EB2E000007A0 /* tree.h */,
+				46EB2E000007B0 /* twofish.h */,
+				46EB2E000007C0 /* version.h */,
+				46EB2E000007D0 /* xtea.h */,
+			);
+			name = libavutil;
+			sourceTree = "<group>";
+		};
+		46EB2E000007E0 /* libswresample */ = {
+			isa = PBXGroup;
+			children = (
+				46EB2E000007F0 /* swresample.h */,
+				46EB2E00000800 /* version.h */,
+			);
+			name = libswresample;
+			sourceTree = "<group>";
+		};
+		46EB2E00000810 /* libswscale */ = {
+			isa = PBXGroup;
+			children = (
+				46EB2E00000820 /* swscale.h */,
+				46EB2E00000830 /* version.h */,
+			);
+			name = libswscale;
+			sourceTree = "<group>";
+		};
+		46EB2E00000A80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46EB2E00000A90 /* libavcodec.a */,
+				46EB2E00000AA0 /* libavdevice.a */,
+				46EB2E00000AB0 /* libavfilter.a */,
+				46EB2E00000AC0 /* libavformat.a */,
+				46EB2E00000AD0 /* libavutil.a */,
+				46EB2E00000AE0 /* libswresample.a */,
+				46EB2E00000AF0 /* libswscale.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D399A2CF59637904C165068200FEFA77 /* Targets Support Files */ = {
+		46EB2E00000B00 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				2707BF8B772711375C83872B05811C09 /* Pods-RTEVideoEditor */,
+				46EB2E00000B10 /* FFmpeg-Pod.podspec */,
+				46EB2E00000B20 /* LICENSE */,
+				46EB2E00000B30 /* README.md */,
 			);
-			name = "Targets Support Files";
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		46EB2E00000B80 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				46EB2E00000B90 /* FFmpeg-Pod.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Pods/Target Support Files/FFmpeg-Pod";
+			sourceTree = "<group>";
+		};
+		46EB2E00000C30 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				46EB2E00000C40 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		46EB2E00000EA0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				46EB2E00000EC0 /* SnapKit.modulemap */,
+				46EB2E00000EB0 /* SnapKit.xcconfig */,
+				46EB2E00000F10 /* SnapKit-dummy.m */,
+				46EB2E00000EF0 /* SnapKit-Info.plist */,
+				46EB2E00000F00 /* SnapKit-prefix.pch */,
+				46EB2E00000ED0 /* SnapKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SnapKit";
+			sourceTree = "<group>";
+		};
+		46EB2E00000FD0 /* Pods-RTEVideoEditor */ = {
+			isa = PBXGroup;
+			children = (
+				46EB2E00001010 /* Pods-RTEVideoEditor.modulemap */,
+				46EB2E00001060 /* Pods-RTEVideoEditor-acknowledgements.markdown */,
+				46EB2E00001050 /* Pods-RTEVideoEditor-acknowledgements.plist */,
+				46EB2E00001070 /* Pods-RTEVideoEditor-dummy.m */,
+				46EB2E00001040 /* Pods-RTEVideoEditor-frameworks.sh */,
+				46EB2E00001000 /* Pods-RTEVideoEditor-Info.plist */,
+				46EB2E00001020 /* Pods-RTEVideoEditor-umbrella.h */,
+				46EB2E00000FF0 /* Pods-RTEVideoEditor.debug.xcconfig */,
+				46EB2E00000FE0 /* Pods-RTEVideoEditor.release.xcconfig */,
+			);
+			name = "Pods-RTEVideoEditor";
+			path = "Target Support Files/Pods-RTEVideoEditor";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6992920BB5E919568EFA947AE9FBCDFB /* Headers */ = {
+		46EB2E00000BF0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				069304B9AB7E84CEA7C88C04369A06E4 /* SnapKit-umbrella.h in Headers */,
+				46EB2E00000EE0 /* SnapKit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6BDF1901EF4A4AAB279EBA35DB898905 /* Headers */ = {
+		46EB2E00000F80 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46BD5437A848687DCA489D85A17F0475 /* Pods-RTEVideoEditor-umbrella.h in Headers */,
+				46EB2E00001030 /* Pods-RTEVideoEditor-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		406313FAAD0BD5A92B75CC564D3F15E4 /* SnapKit */ = {
+		19622742EBA51E823D6DAE3F8CDBFAD4 /* SnapKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0536AD57AB523A06F0EE4CC212DDE0FB /* Build configuration list for PBXNativeTarget "SnapKit" */;
+			buildConfigurationList = 46EB2E00000BB0 /* Build configuration list for PBXNativeTarget "SnapKit" */;
 			buildPhases = (
-				6992920BB5E919568EFA947AE9FBCDFB /* Headers */,
-				8D527DB8C7BDDDF512E70A3C550E7620 /* Sources */,
-				4E295DC4D8DDD971D22944324D1E5CC7 /* Frameworks */,
-				FB42E020CEB4483060C139050C7F2ACB /* Resources */,
+				46EB2E00000BF0 /* Headers */,
+				46EB2E00000C00 /* Sources */,
+				46EB2E00000C10 /* Frameworks */,
+				46EB2E00000C20 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -304,64 +665,67 @@
 			);
 			name = SnapKit;
 			productName = SnapKit;
-			productReference = F446F969E03F6CB6FAF98832DA3C2C8D /* SnapKit.framework */;
+			productReference = 979486118B3E90C08386079D57962701 /* SnapKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		5C98127FC0DA8C3ACC417550EFCE2AE5 /* Pods-RTEVideoEditor */ = {
+		E7CAF97562871EEBDE5CCB2FD347CFA8 /* Pods-RTEVideoEditor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7CF485A7A74CE713A3589499981F5FB6 /* Build configuration list for PBXNativeTarget "Pods-RTEVideoEditor" */;
+			buildConfigurationList = 46EB2E00000F40 /* Build configuration list for PBXNativeTarget "Pods-RTEVideoEditor" */;
 			buildPhases = (
-				6BDF1901EF4A4AAB279EBA35DB898905 /* Headers */,
-				7AF3B07BE7584C2028D15D031A74D534 /* Sources */,
-				FEECE8DEA86E7B64FF2CE4E81F2A8F9F /* Frameworks */,
-				21B63590AF4011439F3F51E9B6499A3D /* Resources */,
+				46EB2E00000F80 /* Headers */,
+				46EB2E00000F90 /* Sources */,
+				46EB2E00000FA0 /* Frameworks */,
+				46EB2E00000FB0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A329E2375D6AA264719CB5CCD44949D7 /* PBXTargetDependency */,
+				46EB2E000010A0 /* PBXTargetDependency */,
+				46EB2E000010C0 /* PBXTargetDependency */,
 			);
 			name = "Pods-RTEVideoEditor";
 			productName = "Pods-RTEVideoEditor";
-			productReference = 52809B2CBE1B1CA4F10A7C59F6D52BA2 /* Pods_RTEVideoEditor.framework */;
+			productReference = A003870D4F316EC7565E402C6355FD50 /* Pods_RTEVideoEditor.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+		46EB2E00000000 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
 			};
-			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			buildConfigurationList = 46EB2E00000030 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
-			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 853B1AB31B79C4480E6E1B1D2115A941 /* Products */;
+			mainGroup = 46EB2E00000010;
+			productRefGroup = 46EB2E00000020 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5C98127FC0DA8C3ACC417550EFCE2AE5 /* Pods-RTEVideoEditor */,
-				406313FAAD0BD5A92B75CC564D3F15E4 /* SnapKit */,
+				DEB98CCB7AFF3CF3334E199E438BDD95 /* FFmpeg-Pod */,
+				E7CAF97562871EEBDE5CCB2FD347CFA8 /* Pods-RTEVideoEditor */,
+				19622742EBA51E823D6DAE3F8CDBFAD4 /* SnapKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		21B63590AF4011439F3F51E9B6499A3D /* Resources */ = {
+		46EB2E00000C20 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FB42E020CEB4483060C139050C7F2ACB /* Resources */ = {
+		46EB2E00000FB0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -371,242 +735,77 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7AF3B07BE7584C2028D15D031A74D534 /* Sources */ = {
+		46EB2E00000C00 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BB9141425EBC87DE5398DB079ED1177 /* Pods-RTEVideoEditor-dummy.m in Sources */,
+				46EB2E00000C60 /* Constraint.swift in Sources */,
+				46EB2E00000C70 /* ConstraintAttributes.swift in Sources */,
+				46EB2E00000C80 /* ConstraintConfig.swift in Sources */,
+				46EB2E00000C90 /* ConstraintConstantTarget.swift in Sources */,
+				46EB2E00000CA0 /* ConstraintDescription.swift in Sources */,
+				46EB2E00000CB0 /* ConstraintDirectionalInsets.swift in Sources */,
+				46EB2E00000CC0 /* ConstraintDirectionalInsetTarget.swift in Sources */,
+				46EB2E00000CD0 /* ConstraintDSL.swift in Sources */,
+				46EB2E00000CE0 /* ConstraintInsets.swift in Sources */,
+				46EB2E00000CF0 /* ConstraintInsetTarget.swift in Sources */,
+				46EB2E00000D00 /* ConstraintItem.swift in Sources */,
+				46EB2E00000D10 /* ConstraintLayoutGuide+Extensions.swift in Sources */,
+				46EB2E00000D20 /* ConstraintLayoutGuide.swift in Sources */,
+				46EB2E00000D30 /* ConstraintLayoutGuideDSL.swift in Sources */,
+				46EB2E00000D40 /* ConstraintLayoutSupport.swift in Sources */,
+				46EB2E00000D50 /* ConstraintLayoutSupportDSL.swift in Sources */,
+				46EB2E00000D60 /* ConstraintMaker.swift in Sources */,
+				46EB2E00000D70 /* ConstraintMakerEditable.swift in Sources */,
+				46EB2E00000D80 /* ConstraintMakerExtendable.swift in Sources */,
+				46EB2E00000D90 /* ConstraintMakerFinalizable.swift in Sources */,
+				46EB2E00000DA0 /* ConstraintMakerPriortizable.swift in Sources */,
+				46EB2E00000DB0 /* ConstraintMakerRelatable.swift in Sources */,
+				46EB2E00000DC0 /* ConstraintMultiplierTarget.swift in Sources */,
+				46EB2E00000DD0 /* ConstraintOffsetTarget.swift in Sources */,
+				46EB2E00000DE0 /* ConstraintPriority.swift in Sources */,
+				46EB2E00000DF0 /* ConstraintPriorityTarget.swift in Sources */,
+				46EB2E00000E00 /* ConstraintRelatableTarget.swift in Sources */,
+				46EB2E00000E10 /* ConstraintRelation.swift in Sources */,
+				46EB2E00000E20 /* ConstraintView+Extensions.swift in Sources */,
+				46EB2E00000E30 /* ConstraintView.swift in Sources */,
+				46EB2E00000E40 /* ConstraintViewDSL.swift in Sources */,
+				46EB2E00000E50 /* Debugging.swift in Sources */,
+				46EB2E00000E60 /* LayoutConstraint.swift in Sources */,
+				46EB2E00000E70 /* LayoutConstraintItem.swift in Sources */,
+				46EB2E00000F20 /* SnapKit-dummy.m in Sources */,
+				46EB2E00000E80 /* Typealiases.swift in Sources */,
+				46EB2E00000E90 /* UILayoutSupport+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D527DB8C7BDDDF512E70A3C550E7620 /* Sources */ = {
+		46EB2E00000F90 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C2701988513F7E2C336A74658A10A9A /* Constraint.swift in Sources */,
-				3261EF1AA7ED63FFAB2EBBD698B723CD /* ConstraintAttributes.swift in Sources */,
-				0B16ABAA80D1F35828304602D46E790B /* ConstraintConfig.swift in Sources */,
-				29807B4E99AED7399B646103BF6EB43A /* ConstraintConstantTarget.swift in Sources */,
-				D06C9E3F6662A1537D672744297F7F81 /* ConstraintDescription.swift in Sources */,
-				4A17C6F8AD6ED26CE617121D4D1B8F01 /* ConstraintDirectionalInsets.swift in Sources */,
-				8AF2E9391939882F604690F277261ECD /* ConstraintDirectionalInsetTarget.swift in Sources */,
-				D33FDC90CC5449657D858F7D54CE936F /* ConstraintDSL.swift in Sources */,
-				80A66BC1D96FEB736444C623456872C3 /* ConstraintInsets.swift in Sources */,
-				B84983A344F6406C15B4C01058F78908 /* ConstraintInsetTarget.swift in Sources */,
-				F378A52479A6A857891F1D350632EE06 /* ConstraintItem.swift in Sources */,
-				A7ECD2AAA3D7A4F58367662B05EFB1EA /* ConstraintLayoutGuide+Extensions.swift in Sources */,
-				9D974E6E7047F5FF264A7A56C112E3E1 /* ConstraintLayoutGuide.swift in Sources */,
-				0AB7CDF6E91149A641B30D27113D1C46 /* ConstraintLayoutGuideDSL.swift in Sources */,
-				2A4C53D844630BB85807170D1149593B /* ConstraintLayoutSupport.swift in Sources */,
-				EB25DC499A94504CB68F31515ECB1357 /* ConstraintLayoutSupportDSL.swift in Sources */,
-				8542782727A2B034AFE201E9FC72B43C /* ConstraintMaker.swift in Sources */,
-				F23CC09CB8A283E773FD4A8A69ACD9B5 /* ConstraintMakerEditable.swift in Sources */,
-				38E6D800DED51D094C4DC39497801EC6 /* ConstraintMakerExtendable.swift in Sources */,
-				DD36F4932E56CD2C3278C6B7E5FE5F71 /* ConstraintMakerFinalizable.swift in Sources */,
-				C8E84246DA279D8D25BA5563A6088A41 /* ConstraintMakerPriortizable.swift in Sources */,
-				65A83DF592CEA4ACBEC8E388BC8CD46D /* ConstraintMakerRelatable.swift in Sources */,
-				2624DA9E1F083B41201E770E4ACAB48E /* ConstraintMultiplierTarget.swift in Sources */,
-				22529DAC484AA621773C007A64BCD180 /* ConstraintOffsetTarget.swift in Sources */,
-				B2844A86E3CD9C052AC23A8F7F1A8E1B /* ConstraintPriority.swift in Sources */,
-				883391613A03A3F77B44FD89581847C9 /* ConstraintPriorityTarget.swift in Sources */,
-				F8EECC077B05B01A19DC8AE8871E6F1C /* ConstraintRelatableTarget.swift in Sources */,
-				1798B9BB68C945D31DD66ADB729C464D /* ConstraintRelation.swift in Sources */,
-				B717FD909397CBA81FD09AA29FA1433E /* ConstraintView+Extensions.swift in Sources */,
-				5E005027ED6B04CF50ED16B7F624BB71 /* ConstraintView.swift in Sources */,
-				82D3814B6ABB60B572B4587A8434A1CA /* ConstraintViewDSL.swift in Sources */,
-				583AA5C62DE6355E02FD732E33C8068D /* Debugging.swift in Sources */,
-				035269C50CE979A09D9941762685854C /* LayoutConstraint.swift in Sources */,
-				3F4A38005000AE7714BC51E7684D902B /* LayoutConstraintItem.swift in Sources */,
-				5FB077B8FE28D43E1F87DB7BBE69DEA8 /* SnapKit-dummy.m in Sources */,
-				84689D51364FCD8FFEE65C058A422069 /* Typealiases.swift in Sources */,
-				E8FB046EC90265CA12FF2C611E43E171 /* UILayoutSupport+Extensions.swift in Sources */,
+				46EB2E00001080 /* Pods-RTEVideoEditor-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A329E2375D6AA264719CB5CCD44949D7 /* PBXTargetDependency */ = {
+		46EB2E000010A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "FFmpeg-Pod";
+			target = DEB98CCB7AFF3CF3334E199E438BDD95 /* FFmpeg-Pod */;
+			targetProxy = 46EB2E00001090 /* PBXContainerItemProxy */;
+		};
+		46EB2E000010C0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SnapKit;
-			target = 406313FAAD0BD5A92B75CC564D3F15E4 /* SnapKit */;
-			targetProxy = 9B650CFAA0F07746B5A448A9C450A1D3 /* PBXContainerItemProxy */;
+			target = 19622742EBA51E823D6DAE3F8CDBFAD4 /* SnapKit */;
+			targetProxy = 46EB2E000010B0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1422B121EAEAEA11307496903FA623C6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		347C78A561BDA789DEBB6A0FBFDA74F1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3141B5F6B08D20751502011F7718EBA8 /* Pods-RTEVideoEditor.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-RTEVideoEditor/Pods-RTEVideoEditor-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-RTEVideoEditor/Pods-RTEVideoEditor.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		8160B0353169B029DE7C1246D81E381E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B01FB959633EF5D24C4628FBD0CFA449 /* SnapKit.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SnapKit/SnapKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SnapKit/SnapKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
-				PRODUCT_MODULE_NAME = SnapKit;
-				PRODUCT_NAME = SnapKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C8975142DAC918716988E8EF37551191 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B01FB959633EF5D24C4628FBD0CFA449 /* SnapKit.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SnapKit/SnapKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SnapKit/SnapKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
-				PRODUCT_MODULE_NAME = SnapKit;
-				PRODUCT_NAME = SnapKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		ED7888FA6713EABBF66D26A8003AD1CA /* Debug */ = {
+		46EB2E00000040 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -657,7 +856,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -670,9 +869,177 @@
 			};
 			name = Debug;
 		};
-		F168DDC8D9C2C73C412E4452B9BB47AB /* Release */ = {
+		46EB2E00000050 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5EB0042D1125060A75C77111744AC055 /* Pods-RTEVideoEditor.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		46EB2E00000B60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46EB2E00000B90 /* FFmpeg-Pod.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		46EB2E00000B70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46EB2E00000B90 /* FFmpeg-Pod.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		46EB2E00000BC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46EB2E00000EB0 /* SnapKit.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SnapKit/SnapKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SnapKit/SnapKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
+				PRODUCT_MODULE_NAME = SnapKit;
+				PRODUCT_NAME = SnapKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		46EB2E00000BD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46EB2E00000EB0 /* SnapKit.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SnapKit/SnapKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SnapKit/SnapKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
+				PRODUCT_MODULE_NAME = SnapKit;
+				PRODUCT_NAME = SnapKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		46EB2E00000F50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46EB2E00000FE0 /* Pods-RTEVideoEditor.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -687,7 +1054,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-RTEVideoEditor/Pods-RTEVideoEditor-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -709,37 +1076,84 @@
 			};
 			name = Release;
 		};
+		46EB2E00000F60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46EB2E00000FF0 /* Pods-RTEVideoEditor.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RTEVideoEditor/Pods-RTEVideoEditor-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RTEVideoEditor/Pods-RTEVideoEditor.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0536AD57AB523A06F0EE4CC212DDE0FB /* Build configuration list for PBXNativeTarget "SnapKit" */ = {
+		46EB2E00000030 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C8975142DAC918716988E8EF37551191 /* Debug */,
-				8160B0353169B029DE7C1246D81E381E /* Release */,
+				46EB2E00000040 /* Debug */,
+				46EB2E00000050 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+		46EB2E00000B50 /* Build configuration list for PBXAggregateTarget "FFmpeg-Pod" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ED7888FA6713EABBF66D26A8003AD1CA /* Debug */,
-				1422B121EAEAEA11307496903FA623C6 /* Release */,
+				46EB2E00000B70 /* Debug */,
+				46EB2E00000B60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7CF485A7A74CE713A3589499981F5FB6 /* Build configuration list for PBXNativeTarget "Pods-RTEVideoEditor" */ = {
+		46EB2E00000BB0 /* Build configuration list for PBXNativeTarget "SnapKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				347C78A561BDA789DEBB6A0FBFDA74F1 /* Debug */,
-				F168DDC8D9C2C73C412E4452B9BB47AB /* Release */,
+				46EB2E00000BD0 /* Debug */,
+				46EB2E00000BC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46EB2E00000F40 /* Build configuration list for PBXNativeTarget "Pods-RTEVideoEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46EB2E00000F60 /* Debug */,
+				46EB2E00000F50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+	rootObject = 46EB2E00000000 /* Project object */;
 }

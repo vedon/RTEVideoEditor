@@ -1,0 +1,66 @@
+{
+  "name": "FFmpeg-Pod",
+  "version": "4.1.0",
+  "summary": "A short description of FFmpeg-Pod.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/vedon/FFmpeg-Pod",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "vedon": "fuweidong@bytedance.com"
+  },
+  "source": {
+    "git": "https://github.com/vedon/FFmpeg-Pod.git",
+    "tag": "4.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "header_mappings_dir": "FFmpeg-Pod/Classes/FFmpeg-iOS/include/",
+  "public_header_files": "FFmpeg-Pod/Classes/FFmpeg-iOS/include/",
+  "static_framework": true,
+  "vendored_libraries": "FFmpeg-Pod/Classes/FFmpeg-iOS/lib/*.a",
+  "frameworks": [
+    "CoreMedia",
+    "VideoToolbox",
+    "AVFoundation"
+  ],
+  "libraries": [
+    "iconv",
+    "bz2",
+    "z",
+    "c++"
+  ],
+  "subspecs": [
+    {
+      "name": "libavcodec",
+      "source_files": "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavcodec/*.h"
+    },
+    {
+      "name": "libavdevice",
+      "source_files": "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavdevice/*.h"
+    },
+    {
+      "name": "libavfilter",
+      "source_files": "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavfilter/*.h"
+    },
+    {
+      "name": "libavformat",
+      "source_files": "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavformat/*.h"
+    },
+    {
+      "name": "libavutil",
+      "source_files": "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libavutil/*.h"
+    },
+    {
+      "name": "libswresample",
+      "source_files": "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libswresample/*.h"
+    },
+    {
+      "name": "libswscale",
+      "source_files": "FFmpeg-Pod/Classes/FFmpeg-iOS/include/libswscale/*.h"
+    }
+  ]
+}

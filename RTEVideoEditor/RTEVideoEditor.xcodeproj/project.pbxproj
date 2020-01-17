@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,16 @@
 		703D783823C749C500B064FF /* Samplers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D783723C749C500B064FF /* Samplers.swift */; };
 		70498E4823D070F900BD2BAF /* GaussianFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70498E4723D070F900BD2BAF /* GaussianFilter.swift */; };
 		70498E4A23D161D200BD2BAF /* RTERenderGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70498E4923D161D200BD2BAF /* RTERenderGraph.swift */; };
+		70498EDE23D1A56700BD2BAF /* FFReaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70498EC923D1A56600BD2BAF /* FFReaderManager.m */; };
+		70498EDF23D1A56700BD2BAF /* FFWriterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70498ECA23D1A56600BD2BAF /* FFWriterManager.m */; };
+		70498EE023D1A56700BD2BAF /* FFSubtileFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 70498ECE23D1A56600BD2BAF /* FFSubtileFrame.m */; };
+		70498EE123D1A56700BD2BAF /* FFAudioFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 70498ECF23D1A56600BD2BAF /* FFAudioFrame.m */; };
+		70498EE223D1A56700BD2BAF /* FFFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 70498ED323D1A56600BD2BAF /* FFFrame.m */; };
+		70498EE323D1A56700BD2BAF /* FFVideoFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 70498ED423D1A56600BD2BAF /* FFVideoFrame.m */; };
+		70498EE423D1A56700BD2BAF /* FFAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 70498ED523D1A56600BD2BAF /* FFAsset.m */; };
+		70498EE523D1A56700BD2BAF /* FFConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 70498ED723D1A56700BD2BAF /* FFConvert.m */; };
+		70498EE623D1A56700BD2BAF /* FFDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 70498EDA23D1A56700BD2BAF /* FFDecoder.m */; };
+		70498EE723D1A56700BD2BAF /* FFDecodeContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 70498EDB23D1A56700BD2BAF /* FFDecodeContext.m */; };
 		7098B58523C43561007441B9 /* PassThrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = 7098B58323C43561007441B9 /* PassThrough.metal */; };
 		7098B59023C4383B007441B9 /* DownsampleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7098B58F23C4383B007441B9 /* DownsampleFilter.swift */; };
 		7098B5A023C60D35007441B9 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7098B59D23C60D35007441B9 /* UIImage+extension.swift */; };
@@ -80,6 +90,27 @@
 		703E1E1E23BB5B9F005E4B7B /* RTEVideoEditor-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RTEVideoEditor-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		70498E4723D070F900BD2BAF /* GaussianFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaussianFilter.swift; sourceTree = "<group>"; };
 		70498E4923D161D200BD2BAF /* RTERenderGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTERenderGraph.swift; sourceTree = "<group>"; };
+		70498EC723D1A56600BD2BAF /* FFReaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFReaderManager.h; sourceTree = "<group>"; };
+		70498EC823D1A56600BD2BAF /* FFWriterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFWriterManager.h; sourceTree = "<group>"; };
+		70498EC923D1A56600BD2BAF /* FFReaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFReaderManager.m; sourceTree = "<group>"; };
+		70498ECA23D1A56600BD2BAF /* FFWriterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFWriterManager.m; sourceTree = "<group>"; };
+		70498ECB23D1A56600BD2BAF /* FFAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAsset.h; sourceTree = "<group>"; };
+		70498ECD23D1A56600BD2BAF /* FFFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFrame.h; sourceTree = "<group>"; };
+		70498ECE23D1A56600BD2BAF /* FFSubtileFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFSubtileFrame.m; sourceTree = "<group>"; };
+		70498ECF23D1A56600BD2BAF /* FFAudioFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAudioFrame.m; sourceTree = "<group>"; };
+		70498ED023D1A56600BD2BAF /* FFVideoFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFVideoFrame.h; sourceTree = "<group>"; };
+		70498ED123D1A56600BD2BAF /* FFAudioFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAudioFrame.h; sourceTree = "<group>"; };
+		70498ED223D1A56600BD2BAF /* FFSubtileFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFSubtileFrame.h; sourceTree = "<group>"; };
+		70498ED323D1A56600BD2BAF /* FFFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFrame.m; sourceTree = "<group>"; };
+		70498ED423D1A56600BD2BAF /* FFVideoFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFVideoFrame.m; sourceTree = "<group>"; };
+		70498ED523D1A56600BD2BAF /* FFAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAsset.m; sourceTree = "<group>"; };
+		70498ED723D1A56700BD2BAF /* FFConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFConvert.m; sourceTree = "<group>"; };
+		70498ED823D1A56700BD2BAF /* FFConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFConvert.h; sourceTree = "<group>"; };
+		70498ED923D1A56700BD2BAF /* FFAsset_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAsset_Private.h; sourceTree = "<group>"; };
+		70498EDA23D1A56700BD2BAF /* FFDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFDecoder.m; sourceTree = "<group>"; };
+		70498EDB23D1A56700BD2BAF /* FFDecodeContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFDecodeContext.m; sourceTree = "<group>"; };
+		70498EDC23D1A56700BD2BAF /* FFDecodeContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFDecodeContext.h; sourceTree = "<group>"; };
+		70498EDD23D1A56700BD2BAF /* FFDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFDecoder.h; sourceTree = "<group>"; };
 		7098B58323C43561007441B9 /* PassThrough.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PassThrough.metal; sourceTree = "<group>"; };
 		7098B58F23C4383B007441B9 /* DownsampleFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownsampleFilter.swift; sourceTree = "<group>"; };
 		7098B59D23C60D35007441B9 /* UIImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
@@ -165,6 +196,58 @@
 				70068A9E23C01E26002796B6 /* MetalView.swift */,
 			);
 			path = PlayerLayer;
+			sourceTree = "<group>";
+		};
+		70498E4B23D1A26600BD2BAF /* FFMpeg */ = {
+			isa = PBXGroup;
+			children = (
+				70498ECB23D1A56600BD2BAF /* FFAsset.h */,
+				70498ED523D1A56600BD2BAF /* FFAsset.m */,
+				70498EDC23D1A56700BD2BAF /* FFDecodeContext.h */,
+				70498EDB23D1A56700BD2BAF /* FFDecodeContext.m */,
+				70498EDD23D1A56700BD2BAF /* FFDecoder.h */,
+				70498EDA23D1A56700BD2BAF /* FFDecoder.m */,
+				70498ECC23D1A56600BD2BAF /* Model */,
+				70498ED623D1A56700BD2BAF /* private */,
+				70498EC623D1A56600BD2BAF /* ReaderWriter */,
+			);
+			path = FFMpeg;
+			sourceTree = "<group>";
+		};
+		70498EC623D1A56600BD2BAF /* ReaderWriter */ = {
+			isa = PBXGroup;
+			children = (
+				70498EC723D1A56600BD2BAF /* FFReaderManager.h */,
+				70498EC823D1A56600BD2BAF /* FFWriterManager.h */,
+				70498EC923D1A56600BD2BAF /* FFReaderManager.m */,
+				70498ECA23D1A56600BD2BAF /* FFWriterManager.m */,
+			);
+			path = ReaderWriter;
+			sourceTree = "<group>";
+		};
+		70498ECC23D1A56600BD2BAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				70498ECD23D1A56600BD2BAF /* FFFrame.h */,
+				70498ECE23D1A56600BD2BAF /* FFSubtileFrame.m */,
+				70498ECF23D1A56600BD2BAF /* FFAudioFrame.m */,
+				70498ED023D1A56600BD2BAF /* FFVideoFrame.h */,
+				70498ED123D1A56600BD2BAF /* FFAudioFrame.h */,
+				70498ED223D1A56600BD2BAF /* FFSubtileFrame.h */,
+				70498ED323D1A56600BD2BAF /* FFFrame.m */,
+				70498ED423D1A56600BD2BAF /* FFVideoFrame.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		70498ED623D1A56700BD2BAF /* private */ = {
+			isa = PBXGroup;
+			children = (
+				70498ED723D1A56700BD2BAF /* FFConvert.m */,
+				70498ED823D1A56700BD2BAF /* FFConvert.h */,
+				70498ED923D1A56700BD2BAF /* FFAsset_Private.h */,
+			);
+			path = private;
 			sourceTree = "<group>";
 		};
 		7098B57E23C434B5007441B9 /* Effect */ = {
@@ -327,6 +410,7 @@
 		70E4428723B88C9000039879 /* RTEVideoEditor */ = {
 			isa = PBXGroup;
 			children = (
+				70498E4B23D1A26600BD2BAF /* FFMpeg */,
 				70BCC3AE23C33C2C00C68716 /* Resources */,
 				70BCC3A923C33BE300C68716 /* FrameProvider */,
 				70068A9B23C01E0E002796B6 /* PlayerLayer */,
@@ -454,16 +538,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RTEVideoEditor/Pods-RTEVideoEditor-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-RTEVideoEditor/Pods-RTEVideoEditor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-RTEVideoEditor/Pods-RTEVideoEditor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -499,6 +578,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70498EE123D1A56700BD2BAF /* FFAudioFrame.m in Sources */,
 				709A7D5723BF4A25001704F3 /* MetalEngine.swift in Sources */,
 				7098B5B723C62481007441B9 /* RosyEffect.metal in Sources */,
 				7098B59023C4383B007441B9 /* DownsampleFilter.swift in Sources */,
@@ -508,8 +588,11 @@
 				70E4429D23B99FA400039879 /* RTEVideoPlayer.swift in Sources */,
 				70498E4823D070F900BD2BAF /* GaussianFilter.swift in Sources */,
 				70068A9F23C01E26002796B6 /* MetalView.swift in Sources */,
+				70498EDE23D1A56700BD2BAF /* FFReaderManager.m in Sources */,
+				70498EE223D1A56700BD2BAF /* FFFrame.m in Sources */,
 				7098B5BE23C8B137007441B9 /* CGImage+extension.swift in Sources */,
 				70BCC3AD23C33BF800C68716 /* AVVideoFrameProvider.swift in Sources */,
+				70498EDF23D1A56700BD2BAF /* FFWriterManager.m in Sources */,
 				70068A9223BF4C21002796B6 /* RendererTransform.swift in Sources */,
 				70B8FD1523CC00F30082F26E /* RiseFilter.metal in Sources */,
 				7098B5B623C62481007441B9 /* RosyFilter.swift in Sources */,
@@ -521,24 +604,30 @@
 				70E4428D23B88C9000039879 /* ViewController.swift in Sources */,
 				70068A9623BF4C4B002796B6 /* AAPLMathUtilities.m in Sources */,
 				70B8FD1723CC01040082F26E /* RiseFilter.swift in Sources */,
+				70498EE023D1A56700BD2BAF /* FFSubtileFrame.m in Sources */,
 				70BF411E23CC61E900784A20 /* RTEComputeEffect.swift in Sources */,
 				709A7D5A23BF4AC5001704F3 /* CVPixelBufferPoolUtil.swift in Sources */,
 				70BCC3A823C3261100C68716 /* FilterGroup.swift in Sources */,
 				70BF412423CEBE2300784A20 /* MetalRenderer.swift in Sources */,
 				70BF411823CC0EAB00784A20 /* MoonFilter.swift in Sources */,
+				70498EE423D1A56700BD2BAF /* FFAsset.m in Sources */,
 				7098B5AA23C611BC007441B9 /* RTEFilter.swift in Sources */,
 				7098B5CF23C95F07007441B9 /* SutroFilter.metal in Sources */,
 				70E4428923B88C9000039879 /* AppDelegate.swift in Sources */,
 				7098B5A223C60D35007441B9 /* UITableView+extension.swift in Sources */,
 				70BCC3AB23C33BE300C68716 /* VideoFrameProvider.swift in Sources */,
 				7098B5A123C60D35007441B9 /* CGSize+extension.swift in Sources */,
+				70498EE623D1A56700BD2BAF /* FFDecoder.m in Sources */,
 				70BCC3B423C36D3700C68716 /* EditControlPannel.swift in Sources */,
+				70498EE723D1A56700BD2BAF /* FFDecodeContext.m in Sources */,
+				70498EE323D1A56700BD2BAF /* FFVideoFrame.m in Sources */,
 				7098B5D123C95F16007441B9 /* SutroFilter.swift in Sources */,
 				70068A9A23C01E02002796B6 /* Logger.swift in Sources */,
 				70498E4A23D161D200BD2BAF /* RTERenderGraph.swift in Sources */,
 				70E4428B23B88C9000039879 /* SceneDelegate.swift in Sources */,
 				703D783823C749C500B064FF /* Samplers.swift in Sources */,
 				70BF412023CC621A00784A20 /* RTERenderEffect.swift in Sources */,
+				70498EE523D1A56700BD2BAF /* FFConvert.m in Sources */,
 				70BF411C23CC61C400784A20 /* CanvasFilter.swift in Sources */,
 				70BCC3A623C31EF700C68716 /* RenderSharedContext.swift in Sources */,
 			);
@@ -688,6 +777,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = PDFVFF3QRW;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FFmpegOC/FFmpegOC.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+				);
 				INFOPLIST_FILE = RTEVideoEditor/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
