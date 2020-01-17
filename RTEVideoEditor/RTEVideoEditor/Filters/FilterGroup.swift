@@ -37,6 +37,8 @@ class FilterGroup {
             return pixelBuffer
         }
         
+        var renderPixelBuffer = RTEPixelBuffer.init(pixelBuffer: outputPixelBuffer)
+        
         self.filterDescriptors.forEach { (descriptor) in
             var filter: RTEFilter?
             if filtersMap[descriptor.identifier] == nil {
@@ -59,11 +61,12 @@ class FilterGroup {
                 filter.params = filtersParmasMap[descriptor.identifier]
                 
                 filter.prepare()
-                outputPixelBuffer = filter.render(pixelBuffer: outputPixelBuffer)
+                
+                renderPixelBuffer = filter.render(pixelBuffer: renderPixelBuffer)
             }
         }
         
-        return outputPixelBuffer
+        return renderPixelBuffer.data
     }
     
     func add(filter: RTEFilterType) {

@@ -26,36 +26,61 @@ class GaussianFilter {
         self.context = context
     }
     
-    func render(pixelBuffer: CVPixelBuffer, toDestinate drawableTexture: MTLTexture) {
-        guard let inputTexture = context.textureFrom(pixelBuffer: pixelBuffer) else {
-            assertionFailure("Invalid Renderer Context")
-            return
-        }
-        guard let commandBuffer = context.commandQueue?.makeCommandBuffer(),
-            let (gaussiamTexture, _) = context.newTextureFrom(pixelBuffer: pixelBuffer) else {
-            assertionFailure("Invalid Renderer Context")
-            return
-        }
-        gaussianFilter?.encode(commandBuffer: commandBuffer,
-                              sourceTexture: inputTexture,
-                              destinationTexture: gaussiamTexture)
-        commandBuffer.commit()
+    func render(pixelBuffer: RTEPixelBuffer, toDestinate drawableTexture: MTLTexture) -> [RenderDescriptor] {
+        var graph = RTERenderGraph()
         
-        renderer.start(toRender: gaussiamTexture, toDestination: drawableTexture, debugGroup: "Gaussian")
+        guard let inputTexture = context.textureFrom(pixelBuffer: pixelBuffer.data),
+            let commandBuffer = context.commandQueue?.makeCommandBuffer() else {
+            assertionFailure("Invalid Renderer Context")
+            return graph.descriptors
+        }
+        
+        if inputTexture.width == drawableTexture.width, inputTexture.height == drawableTexture.height {
+            gaussianFilter?.encode(commandBuffer: commandBuffer,
+                                  sourceTexture: inputTexture,
+                                  destinationTexture: drawableTexture)
+            commandBuffer.commit()
+            
+            graph.descriptors.append(RenderDescriptor(name: "Render_Gaussian_Texture"))
+            return graph.descriptors
+            
+        } else {
+            
+            guard let (gaussiamTexture, _) = context.newTextureFrom(pixelBuffer: pixelBuffer.data) else {
+                assertionFailure("Invalid Renderer Context")
+                return graph.descriptors
+            }
+            
+            gaussianFilter?.encode(commandBuffer: commandBuffer,
+                                  sourceTexture: inputTexture,
+                                  destinationTexture: gaussiamTexture)
+            commandBuffer.commit()
+            graph.descriptors.append(RenderDescriptor(name: "Render_Gaussian_Texture"))
+            
+            let descriptors = renderer.start(toRender: gaussiamTexture,
+                                             toDestination: drawableTexture,
+                                             debugGroup: "Aspect_Fill")
+            graph.descriptors.append(contentsOf: descriptors)
+            return graph.descriptors
+            
+        }
     }
 }
 
 extension GaussianFilter: RTEFilter {
-    func render(pixelBuffer: CVPixelBuffer) -> CVPixelBuffer {
+    func render(pixelBuffer: RTEPixelBuffer) -> RTEPixelBuffer {
         var pixelBuffer = pixelBuffer
 
         if self.gaussianFilter != nil {
-            guard let (drawableTexture, outputPixelBuffer) = context.newTextureFrom(pixelBuffer: pixelBuffer) else {
+            guard let (drawableTexture, outputPixelBuffer) = context.newTextureFrom(pixelBuffer: pixelBuffer.data) else {
                 return pixelBuffer
             }
             
-            render(pixelBuffer: pixelBuffer, toDestinate: drawableTexture)
-            pixelBuffer = outputPixelBuffer
+            var graph = pixelBuffer.renderGraph
+            let descriptors = render(pixelBuffer: pixelBuffer, toDestinate: drawableTexture)
+            graph.descriptors.append(contentsOf: descriptors)
+            
+            pixelBuffer = RTEPixelBuffer(renderGraph: graph, pixelBuffer: outputPixelBuffer)
         }
         
         return pixelBuffer

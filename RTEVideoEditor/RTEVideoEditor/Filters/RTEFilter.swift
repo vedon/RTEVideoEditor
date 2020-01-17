@@ -27,22 +27,32 @@ enum RTEFilterType: String, CaseIterable {
     }
 }
 
-protocol FilterParams {
+protocol FilterParams {}
+
+class RTEPixelBuffer {
+    let renderGraph: RTERenderGraph
+    let data: CVPixelBuffer
+    
+    init(renderGraph: RTERenderGraph, pixelBuffer: CVPixelBuffer) {
+        self.renderGraph = renderGraph
+        self.data = pixelBuffer
+    }
+    
+    convenience init(pixelBuffer: CVPixelBuffer) {
+        self.init(renderGraph: RTERenderGraph(), pixelBuffer: pixelBuffer)
+    }
+    
+    @objc func debugQuickLookObject() -> Any? {
+        return renderGraph.draw()
+    }
 }
 
 protocol RTEFilter {
     var context: RenderSharedContext { get }
     var params: FilterParams? { get set }
     
-    func render(pixelBuffer: CVPixelBuffer) -> CVPixelBuffer
+    func render(pixelBuffer: RTEPixelBuffer) -> RTEPixelBuffer
     func prepare()
-    
-    var quickLookDesc: String? { get }
 }
 
-extension RTEFilter {
-    var quickLookDesc: String? {
-        return ""
-    }
-}
 

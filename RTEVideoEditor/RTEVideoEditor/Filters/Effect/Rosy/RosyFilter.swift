@@ -12,7 +12,7 @@ import AVFoundation
 class RosyFilter: RTEComputeEffect {
     override var fragmentFunc: String { return "rosyEffect" }
     
-    override func render(pixelBuffer: CVPixelBuffer) -> CVPixelBuffer {
+    override func render(pixelBuffer: RTEPixelBuffer) -> RTEPixelBuffer {
         let pixelBuffer = super.render(pixelBuffer: pixelBuffer)
         
         guard let commandBuffer = context.commandQueue?.makeCommandBuffer(),
@@ -23,8 +23,8 @@ class RosyFilter: RTEComputeEffect {
             return pixelBuffer
         }
         
-        guard let inputTexture = context.textureFrom(pixelBuffer: pixelBuffer),
-            let (outputTexture, outputPixelBuffer) = context.newTextureFrom(pixelBuffer: pixelBuffer) else {
+        guard let inputTexture = context.textureFrom(pixelBuffer: pixelBuffer.data),
+            let (outputTexture, outputPixelBuffer) = context.newTextureFrom(pixelBuffer: pixelBuffer.data) else {
             return pixelBuffer
         }
         
@@ -44,6 +44,6 @@ class RosyFilter: RTEComputeEffect {
         commandEncoder.endEncoding()
         commandBuffer.commit()
 
-        return outputPixelBuffer
+        return RTEPixelBuffer.init(renderGraph: pixelBuffer.renderGraph, pixelBuffer: outputPixelBuffer)
     }
 }

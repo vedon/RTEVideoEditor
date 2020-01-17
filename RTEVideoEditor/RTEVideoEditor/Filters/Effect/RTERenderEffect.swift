@@ -17,7 +17,6 @@ class RTERenderEffect: RTEFilter {
     var vertexFunc: String { return "vertexPassThrough" }
     var fragmentFunc: String { return "fragmentPassThrough" }
     var samplerImages: [String] { return [] }
-    var quickLookDesc: String? { return "" }
     
     var transform = RendererTransform()
     private(set) var uniformBuffer: MTLBuffer!
@@ -71,9 +70,8 @@ class RTERenderEffect: RTEFilter {
         uniform[0].mvp = transform.mvp
     }
 
-    func render(pixelBuffer: CVPixelBuffer) -> CVPixelBuffer {
-
-        guard let inputTexture = context.textureFrom(pixelBuffer: pixelBuffer) else { return pixelBuffer }
+    func render(pixelBuffer: RTEPixelBuffer) -> RTEPixelBuffer {
+        guard let inputTexture = context.textureFrom(pixelBuffer: pixelBuffer.data) else { return pixelBuffer }
         renderPass.colorAttachments[0].texture = inputTexture
         
         guard let commandBuffer = context.commandQueue?.makeCommandBuffer() else {

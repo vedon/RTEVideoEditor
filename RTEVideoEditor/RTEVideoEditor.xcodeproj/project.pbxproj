@@ -15,6 +15,7 @@
 		70068A9F23C01E26002796B6 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70068A9E23C01E26002796B6 /* MetalView.swift */; };
 		703D783823C749C500B064FF /* Samplers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D783723C749C500B064FF /* Samplers.swift */; };
 		70498E4823D070F900BD2BAF /* GaussianFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70498E4723D070F900BD2BAF /* GaussianFilter.swift */; };
+		70498E4A23D161D200BD2BAF /* RTERenderGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70498E4923D161D200BD2BAF /* RTERenderGraph.swift */; };
 		7098B58523C43561007441B9 /* PassThrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = 7098B58323C43561007441B9 /* PassThrough.metal */; };
 		7098B59023C4383B007441B9 /* DownsampleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7098B58F23C4383B007441B9 /* DownsampleFilter.swift */; };
 		7098B5A023C60D35007441B9 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7098B59D23C60D35007441B9 /* UIImage+extension.swift */; };
@@ -78,6 +79,7 @@
 		703D783723C749C500B064FF /* Samplers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Samplers.swift; sourceTree = "<group>"; };
 		703E1E1E23BB5B9F005E4B7B /* RTEVideoEditor-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RTEVideoEditor-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		70498E4723D070F900BD2BAF /* GaussianFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaussianFilter.swift; sourceTree = "<group>"; };
+		70498E4923D161D200BD2BAF /* RTERenderGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTERenderGraph.swift; sourceTree = "<group>"; };
 		7098B58323C43561007441B9 /* PassThrough.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PassThrough.metal; sourceTree = "<group>"; };
 		7098B58F23C4383B007441B9 /* DownsampleFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownsampleFilter.swift; sourceTree = "<group>"; };
 		7098B59D23C60D35007441B9 /* UIImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				7098B5A923C611BC007441B9 /* RTEFilter.swift */,
 				70BF411B23CC61C400784A20 /* CanvasFilter.swift */,
 				70498E4723D070F900BD2BAF /* GaussianFilter.swift */,
+				70498E4923D161D200BD2BAF /* RTERenderGraph.swift */,
 			);
 			path = Filters;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				70BCC3B423C36D3700C68716 /* EditControlPannel.swift in Sources */,
 				7098B5D123C95F16007441B9 /* SutroFilter.swift in Sources */,
 				70068A9A23C01E02002796B6 /* Logger.swift in Sources */,
+				70498E4A23D161D200BD2BAF /* RTERenderGraph.swift in Sources */,
 				70E4428B23B88C9000039879 /* SceneDelegate.swift in Sources */,
 				703D783823C749C500B064FF /* Samplers.swift in Sources */,
 				70BF412023CC621A00784A20 /* RTERenderEffect.swift in Sources */,
@@ -692,7 +696,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Free.RTEVideoEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = YipengHao_Wildcard;
+				PROVISIONING_PROFILE_SPECIFIER = Yipeng_Hao_Wildcard_85HEZ7Y9TR;
 				SWIFT_OBJC_BRIDGING_HEADER = "RTEVideoEditor-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -715,7 +719,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Free.RTEVideoEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = YipengHao_Wildcard;
+				PROVISIONING_PROFILE_SPECIFIER = Yipeng_Hao_Wildcard_85HEZ7Y9TR;
 				SWIFT_OBJC_BRIDGING_HEADER = "RTEVideoEditor-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

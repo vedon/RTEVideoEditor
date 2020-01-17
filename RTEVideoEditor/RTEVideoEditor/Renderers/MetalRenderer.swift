@@ -12,7 +12,6 @@ import AVFoundation
 
 struct RendererDescriptor {
     let pixelFormat: MTLPixelFormat
-    
     var loadAction: MTLLoadAction = .clear
     var storeAction: MTLStoreAction = .store
     var clearColor: MTLClearColor = MTLClearColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
@@ -66,11 +65,11 @@ class MetalRenderer {
         setupTransform()
     }
     
-    func start(toRender inputTexture: MTLTexture, toDestination drawableTexture: MTLTexture, debugGroup: String = "") {
+    func start(toRender inputTexture: MTLTexture, toDestination drawableTexture: MTLTexture, debugGroup: String = "") -> [RenderDescriptor] {
         guard let commandBuffer = commandQueue?.makeCommandBuffer(),
             let pipelineState = self.pipelineState else {
             assertionFailure("Invalid Renderer Context")
-            return
+            return []
         }
         
         transform.videoTextureSize = CGSize(width: CGFloat(inputTexture.width),
@@ -85,7 +84,7 @@ class MetalRenderer {
         renderPassDescriptor.colorAttachments[0].texture = drawableTexture
         guard let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) else {
             assertionFailure("Invalid command encoder")
-            return
+            return []
         }
         
         commandEncoder.pushDebugGroup(debugGroup)
@@ -107,6 +106,8 @@ class MetalRenderer {
         commandEncoder.popDebugGroup()
         commandEncoder.endEncoding()
         commandBuffer.commit()
+        
+        return [RenderDescriptor(name: debugGroup)]
     }
     
     private func setupTransform() {

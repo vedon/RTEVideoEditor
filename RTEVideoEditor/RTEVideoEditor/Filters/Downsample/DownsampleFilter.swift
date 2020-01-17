@@ -80,16 +80,16 @@ extension DownsampleFilter: RTEFilter {
         }
     }
     
-    func render(pixelBuffer: CVPixelBuffer) -> CVPixelBuffer {
+    func render(pixelBuffer: RTEPixelBuffer) -> RTEPixelBuffer {
         guard let commandBuffer = context.commandQueue?.makeCommandBuffer() else {
             assertionFailure("Invalid Renderer Context")
             return pixelBuffer
         }
 
-        var (transform, size) = downsampleSizeForPixelBuffer(pixelBuffer, drawableSize: context.drawableSize)
+        var (transform, size) = downsampleSizeForPixelBuffer(pixelBuffer.data, drawableSize: context.drawableSize)
         
-        guard let inputTexture = context.textureFrom(pixelBuffer: pixelBuffer),
-            let (outputTexture, outputPixelBuffer) = context.newTextureFrom(pixelBuffer: pixelBuffer, customSize: size) else {
+        guard let inputTexture = context.textureFrom(pixelBuffer: pixelBuffer.data),
+            let (outputTexture, outputPixelBuffer) = context.newTextureFrom(pixelBuffer: pixelBuffer.data, customSize: size) else {
             return pixelBuffer
         }
         
@@ -100,6 +100,6 @@ extension DownsampleFilter: RTEFilter {
         }
         commandBuffer.commit()
         
-        return outputPixelBuffer
+        return RTEPixelBuffer.init(renderGraph: pixelBuffer.renderGraph, pixelBuffer: outputPixelBuffer)
     }
 }

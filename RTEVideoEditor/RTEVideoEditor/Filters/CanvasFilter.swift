@@ -43,16 +43,24 @@ class CanvasFilter {
 }
 
 extension CanvasFilter: RTEFilter {
-    func render(pixelBuffer: CVPixelBuffer) -> CVPixelBuffer {
-        guard let inputTexture = context.textureFrom(pixelBuffer: pixelBuffer),
-            let (drawableTexture, outputPixelBuffer) = context.newTextureFrom(pixelBuffer: pixelBuffer, customSize: context.drawableSize) else {
+    func render(pixelBuffer: RTEPixelBuffer) -> RTEPixelBuffer {
+        guard let inputTexture = context.textureFrom(pixelBuffer: pixelBuffer.data),
+            let (drawableTexture, outputPixelBuffer) = context.newTextureFrom(pixelBuffer: pixelBuffer.data, customSize: context.drawableSize) else {
             return pixelBuffer
         }
+        var graph = pixelBuffer.renderGraph
         
-        self.gaussianFilter.render(pixelBuffer: pixelBuffer, toDestinate: drawableTexture)
-        renderer.start(toRender: inputTexture, toDestination: drawableTexture, debugGroup: "Draw canvas")
+        var descriptor = gaussianFilter.render(pixelBuffer: pixelBuffer,
+                                               toDestinate: drawableTexture)
+        graph.descriptors.append(contentsOf: descriptor)
+        
+        
+        descriptor = renderer.start(toRender: inputTexture,
+                                    toDestination: drawableTexture,
+                                    debugGroup: "Draw canvas")
+        graph.descriptors.append(contentsOf: descriptor)
 
-        return outputPixelBuffer
+        return RTEPixelBuffer(renderGraph: graph, pixelBuffer: outputPixelBuffer)
     }
     
     func prepare() {

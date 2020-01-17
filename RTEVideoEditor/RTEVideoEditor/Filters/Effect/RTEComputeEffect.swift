@@ -14,7 +14,6 @@ class RTEComputeEffect: RTEFilter {
     var params: FilterParams?
     
     var fragmentFunc: String { return "fragmentPassThrough" }
-    var quickLookDesc: String? { return "" }
     
     var computePipelineState: MTLComputePipelineState? {
         var pipelineState: MTLComputePipelineState?
@@ -31,7 +30,7 @@ class RTEComputeEffect: RTEFilter {
         self.context = context
     }
     
-    func render(pixelBuffer: CVPixelBuffer) -> CVPixelBuffer {
+    func render(pixelBuffer: RTEPixelBuffer) -> RTEPixelBuffer {
         return pixelBuffer
     }
     
